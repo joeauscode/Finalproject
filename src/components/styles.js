@@ -10,7 +10,7 @@ export const Header = styled.header`
    display: flex;
   justify-content: space-between;
   color: wheat;
-  width: 78%;
+  width: 75%;
   margin: auto;
   align-items: center;
   }
@@ -33,7 +33,7 @@ background-color: #ffff;
   display: flex;
   justify-content: space-between;
   align-self: center;
-  width: 78%;
+  width: 75%;
   margin: auto;
   color: #306c33;
 }
@@ -95,10 +95,11 @@ background-color: #ffff;
 
 export const Homepage = styled.main`
 background-color: #f3f3f7;
+position: relative;
 
 .homewrapper{
   display: flex;
-  width: 70%;
+  width: 65%;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -109,6 +110,7 @@ background-color: #f3f3f7;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: -7rem;
 }
 h4{
   font-size: 14px;
@@ -116,23 +118,67 @@ h4{
   color: #a8c76c;
 }
 h1{
-  font-size: 50px;
+  font-size: 40px;
   color: #267b2b;
+  font-weight: 600;
+
 }
 p{
   text-transform: capitalize;
-  font-size: 17px;
+  font-size: 15px;
   color: #9e9993;
+
 
 }
 button{
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.3rem;
   border: none;
   border-radius: 20px;
   background-color: #287e2b;
-  font-size: 14px;
+  font-size: 12px;
   color: whitesmoke;
   cursor: pointer;
 }
+
+
+
+/* flyer */
+
+.flyer{
+  display: flex;
+  background-color: white;
+  width: 75%;
+  position: absolute;
+  margin-top: -7rem;
+  left: 10.5%;
+  z-index: 100;
+
+}
+
+.flyer> div>span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #297d2e;
+  font-weight: 900;
+}
+
+.flyer> div{
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.flyer> div>p{
+  font-size: 14px;
+}
+
+
 
 `
