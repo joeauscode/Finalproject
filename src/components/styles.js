@@ -118,7 +118,7 @@ h4{
   color: #a8c76c;
 }
 h1{
-  font-size: 40px;
+  font-size: 45px;
   color: #267b2b;
   font-weight: 600;
 
