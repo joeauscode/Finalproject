@@ -495,7 +495,9 @@ width: 100%;
   width: 90%;
   margin: 2rem auto;
 }
-
+.first>h1{
+  font-size: 23px;
+}
 .imgahom{
   width: 100%;
 }
