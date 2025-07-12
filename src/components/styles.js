@@ -496,7 +496,7 @@ width: 100%;
   margin: 2rem auto;
 }
 .first>h1{
-  font-size: 23px;
+  font-size: 26px;
 }
 .imgahom{
   width: 100%;
@@ -538,7 +538,6 @@ img{
 }
 
 
-
 .mainofer{
  display: flex;
  flex-direction: column;
@@ -549,8 +548,10 @@ img{
 .topoffer{
   display: flex;
   gap: 20px;
-  padding: 5px;
+  padding: 5px 0px;
+  justify-content: space-between;
 }
+
 
 }
 
