@@ -89,7 +89,7 @@ const HomepageComponent = () => {
 
         <div className="titlecards">
 
-          <div className='cards'>
+          <div className='cards' data-aos="fade-up">
           <span className='new'>New</span>
           <div className='titleimg'><img src={aloe} alt="Aloe" /></div>
           <div>
@@ -105,7 +105,7 @@ const HomepageComponent = () => {
           </div>
 
 
-          <div className='cards'>
+          <div className='cards' data-aos="fade-up">
           <span className='newminus'>-34%</span>
           <div className='titleimg'><img src={apple} alt="apple" /></div>
           <div>
@@ -121,7 +121,7 @@ const HomepageComponent = () => {
           </div>
 
 
-          <div className='cards'>
+          <div className='cards' data-aos="fade-up">
           <span className='newminus'>-34%</span>
           <div className='titleimg'><img src={froud} alt="froud" /></div>
           <div>
@@ -137,7 +137,7 @@ const HomepageComponent = () => {
           </div>
 
 
-          <div className='cards'>
+          <div className='cards' data-aos="fade-up">
           <span className='newminus'>-34%</span>
           <div className='titleimg'><img src={banana} alt="banana" /></div>
           <div>
@@ -153,7 +153,7 @@ const HomepageComponent = () => {
           </div>
 
 
-          <div className='cards'>
+          <div className='cards' data-aos="fade-up">
           <span className='new'>New</span>
           <div className='titleimg'><img src={flowers} alt="flowers" /></div>
           <div>
@@ -223,9 +223,9 @@ const HomepageComponent = () => {
       </div>
 
 
-      <ProductAll />
-      <Featurebran />
-      <Reviews />
+      <ProductAll data-aos="fade-up" />
+      <Featurebran  data-aos="fade-up"/>
+      <Reviews  />
       
     </Homepage>
   )
