@@ -81,7 +81,7 @@ const HomepageComponent = () => {
 
 
 
-      <div>
+      <div data-aos="fade-up">
         <div className="title">
           <h3>weekly food offer </h3>
           <div>End in: {time.format("00 : HH : mm : ss")}</div>
@@ -91,7 +91,7 @@ const HomepageComponent = () => {
 
           <div className='cards'>
           <span className='new'>New</span>
-          <div data-aos="fade-up" className='titleimg'><img src={aloe} alt="Aloe" /></div>
+          <div className='titleimg'><img src={aloe} alt="Aloe" /></div>
           <div>
             <span className='titleprice'>$60.00 - $150.00</span>
               <p className='titleproduct'>Aloe Arborescens</p>
@@ -107,7 +107,7 @@ const HomepageComponent = () => {
 
           <div className='cards'>
           <span className='newminus'>-34%</span>
-          <div data-aos="fade-up" className='titleimg'><img src={apple} alt="apple" /></div>
+          <div className='titleimg'><img src={apple} alt="apple" /></div>
           <div>
             <span className='titlepriceminue'>$19.00 - &nbsp;<span className='strock'>$29.00</span></span>
               <p className='titleproduct'>Annurca apples</p>
@@ -123,7 +123,7 @@ const HomepageComponent = () => {
 
           <div className='cards'>
           <span className='newminus'>-34%</span>
-          <div data-aos="fade-up" className='titleimg'><img src={froud} alt="froud" /></div>
+          <div className='titleimg'><img src={froud} alt="froud" /></div>
           <div>
             <span className='titlepriceminue'>$19.00 - &nbsp;<span className='strock'>$29.00</span></span>
               <p className='titleproduct'>Apple Granny</p>
@@ -139,7 +139,7 @@ const HomepageComponent = () => {
 
           <div className='cards'>
           <span className='newminus'>-34%</span>
-          <div data-aos="fade-up" className='titleimg'><img src={banana} alt="banana" /></div>
+          <div className='titleimg'><img src={banana} alt="banana" /></div>
           <div>
             <span className='titlepriceminue'>$29.00 - &nbsp;<span className='strock'>$39.00</span></span>
               <p className='titleproduct'>Bananas</p>
@@ -155,7 +155,7 @@ const HomepageComponent = () => {
 
           <div className='cards'>
           <span className='new'>New</span>
-          <div data-aos="fade-up" className='titleimg'><img src={flowers} alt="flowers" /></div>
+          <div className='titleimg'><img src={flowers} alt="flowers" /></div>
           <div>
             <span className='titleprice'>$499.00</span>
               <p className='titleproduct'>Crescione Aclla Cress</p>
