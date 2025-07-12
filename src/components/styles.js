@@ -848,7 +848,7 @@ export const Feature = styled.main`
 
 
 export const Reviewshere = styled.main`
-
+ font-family: 'Poppins', sans-serif;
 background-color: #ffff;
 margin-top: 2rem;
 
@@ -887,6 +887,173 @@ height: 100px;
   color: #ebae20ff;
 
 }
+.name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.name>span:nth-child(1){
+color: #86a158;
+font-size: 14px;
+
+}
+.dotscroll{
+  display: flex;
+  gap: 0rem;
+  margin-block:1rem;
+  color: #86a158;
+}
+.dot{
+  cursor: pointer;
+  }
+
+  .dot:hover{
+    font-size: 20px;
+    color: black;
+  }
 
 
+
+
+
+
+  .reviwcards{
+    width: 75%;
+    margin: auto;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 15px;
+  }
+
+  .reviwimg{
+    background-color: #f9f9f9;
+   height: 120px;
+   width: 100%;
+   margin-bottom: 10px;
+  }
+
+  .reviwimg>img{
+    width: 100%;
+  }
+
+ 
+
+
+  .cardshere{
+    border: 0.3px solid lightgray;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+
+  .middlescard{
+    display: flex;
+    flex-direction: column;
+    margin-block:5px;
+  }
+
+  .shopmore{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .reviewhead{
+ color: #86a158;
+ font-weight: 600;
+ font-size: 14px;
+
+  }
+ 
+
+
+
+  .latestpost{
+    width: 75%;
+    margin: 2rem auto;
+  }
+
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+  .mainhercardss{
+    display: flex;
+    padding: 11px 14px;
+    gap: 1rem;
+  }
+
+  #cardshere{
+   border: none;
+   font-size: 13px;
+  }
+
+  .titleheaing{
+    color: #266f29;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 700;
+    padding: 10px 14px;
+  }
+
+  .mydivimg{
+    width: 100%;
+    height: 160px;
+    border-radius: 5px;
+  }
+.mydivimg>img{
+  width: 100%;
+   height: 160px;
+  border-radius: 5px;
+}
+
+.titsh{
+  color: #86a158;
+  font-size: 14px;
+  margin-block: 9px;
+  font-weight: 600;
+}
+
+.lastvewbitton{
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 800px) {
+  .revis{
+    width: 100%;
+  }
+
+
+  .reviwcards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 10px;
+  }
+
+  .latestpost{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainhercardss{
+        width: 95%;
+        margin: auto;
+        border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 0.3px solid lightgray;
+  }
+}
 `
