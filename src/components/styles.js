@@ -1074,4 +1074,120 @@ export const Foot = styled.footer`
 background-color: #f7f5f4;
  font-family: 'Poppins', sans-serif;
 
+
+ .footerimage{
+  width: 75%;
+  margin: auto;
+  border: 1px solid  #f7f5f4;
+  padding: 20px 0px;
+
+ }
+
+
+ .topfoo{
+  display: flex;
+  padding: 8px 0px;
+  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+
+ }
+
+ .sociamidea{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+ }
+
+ .subscrib{
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+ }
+ input{
+  margin-left: 3.5rem;
+  color: #287e2d;
+  border: 0.3px solid #287e2d;
+  padding: 8px 14px;
+  border-radius: 6px;
+  width: 200px;
+ }
+
+ button{
+  background-color: #287e2d;
+  color: whitesmoke;
+   border: none;
+   padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+ }
+.subscrib > span{
+  color:  #435b53;
+  font-size: 17px;
+}
+
+.lists{
+  display: flex;
+  justify-content: space-between;
+}
+
+ul{
+font-size: 12px;
+list-style-type: none;
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+
+.listdays>div{
+  display: flex;
+  font-size: 10px;
+  gap: 2.2rem;
+  justify-content: space-between;
+  margin-block: 9px;
+  border-bottom: 0.3px solid lightgray;
+}
+
+
+
+@media screen and (max-width: 800px) {
+   .footerimage{
+    width: 100%;
+
+   }
+
+   .topfoo{
+     flex-direction: column;
+     gap: 1.3rem;
+   }
+
+   .lists{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+   }
+   li{
+    text-align: center;
+   }
+   
+   .subscrib{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+   }
+
+   input{
+   padding: 8px 3px;
+   margin: 0;
+
+   }
+}
 `
