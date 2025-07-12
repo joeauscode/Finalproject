@@ -1047,13 +1047,31 @@ font-size: 14px;
   }
 
   .mainhercardss{
-        width: 95%;
+        width: 100%;
         margin: auto;
         border-radius: 5px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border: 0.3px solid lightgray;
+   
+  }
+      #cardshere{
+       border: 0.3px solid lightgray;
+       padding: 10px 10px;
+       border-radius: 6px;
+    }
+  .titsh{
+    text-align: center;
   }
 }
+`
+
+
+
+
+
+export const Foot = styled.footer`
+background-color: #f7f5f4;
+ font-family: 'Poppins', sans-serif;
+
 `
