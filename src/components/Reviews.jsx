@@ -19,8 +19,9 @@ const Reviews = () => {
       </div>
       <span>Alxeander Ball</span>
       <span>New York</span>
-       <div className='dotscroll'>
-        <span><LuDot /></span>
+      
+      <div className='dotscroll'>
+      <span><LuDot /></span>
       <span><LuDot /></span>
       <span><LuDot /></span>
        </div>

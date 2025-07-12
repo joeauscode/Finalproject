@@ -110,7 +110,7 @@ background-color: #ffff;
     height: 100%;
     z-index: 300;
     width: 250px;
-    top: 0;
+    top: 100px;
   }
 
   .cloasdiv{
