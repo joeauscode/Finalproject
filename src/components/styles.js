@@ -538,6 +538,7 @@ img{
 }
 
 
+
 .mainofer{
  display: flex;
  flex-direction: column;
@@ -724,6 +725,7 @@ color: #e0654cff;
     gap: 0rem;
     margin: auto;
     justify-content: space-between;
+   
   }
   .toponetwo>span{
     font-size: 12px;
@@ -731,6 +733,9 @@ color: #e0654cff;
 
   .banner{
   width: 100%;
+}
+.buttom{
+  text-align: center;
 }
   
 }
