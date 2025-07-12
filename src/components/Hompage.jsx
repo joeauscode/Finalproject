@@ -19,13 +19,18 @@ import meat from '../assets/topoffer/meat.png'
 import ProductAll from './ProductAll'
 import Featurebran from './Featurebran'
 import Reviews from './Reviews'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
  
 import aloe from '../assets/titlecard/aloe.png'
 // datetime
 import dayjs from "dayjs";
 
 const HomepageComponent = () => {
+
+    useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
 
 
   // date time
@@ -171,7 +176,7 @@ const HomepageComponent = () => {
 
 
       <div className='mainofer'>
-        <div className="topoffer">
+        <div className="topoffer" data-aos="fade-up">
           <div className="topofe">
             <p className='firstp'>TOP OFFERS</p>
              <div className='spanclas'>
