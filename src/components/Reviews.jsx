@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Reviewshere} from './styles'
 import man from '../assets/Reviews/man.png'
 import { TiStarFullOutline } from "react-icons/ti";
@@ -13,6 +13,8 @@ import juice from '../assets/Reviews/friutjoice.png'
 import ortopus from '../assets/Reviews/othopus.png'
 import fanta from '../assets/Reviews/fanta.png'
 import flows from '../assets/Reviews/lowes.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -23,6 +25,11 @@ import flows from '../assets/Reviews/lowes.png'
 
 
 const Reviews = () => {
+
+    useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <Reviewshere>
       <div className="imagedis">
@@ -47,7 +54,7 @@ const Reviews = () => {
 
       <div className="reviwcards">
         
-        <div className="cardshere">
+        <div className="cardshere" data-aos="fade-up">
           <div className='reviwimg'><img src={tomatoes} alt="tomatoes" /></div>
 
           <div>
@@ -64,7 +71,7 @@ const Reviews = () => {
         </div>
 
 
-        <div className="cardshere">
+        <div className="cardshere" data-aos="fade-up">
           <div className='reviwimg'><img src={potatoes} alt="potatoes" /></div>
 
           <div>
@@ -81,7 +88,7 @@ const Reviews = () => {
         </div>
 
 
-        <div className="cardshere">
+        <div className="cardshere" data-aos="fade-up">
           <div className='reviwimg'><img src={leaves} alt="leaves" /></div>
 
           <div>
@@ -98,7 +105,7 @@ const Reviews = () => {
         </div>
 
 
-        <div className="cardshere">
+        <div className="cardshere" data-aos="fade-up">
           <div className='reviwimg'><img src={mush} alt="mush" /></div>
 
           <div>
@@ -114,7 +121,7 @@ const Reviews = () => {
           </div>
         </div>
 
-        <div className="cardshere">
+        <div className="cardshere" data-aos="fade-up">
           <div className='reviwimg'><img src={potatoes} alt="potatoes" /></div>
 
           <div>
@@ -142,7 +149,7 @@ const Reviews = () => {
 
     <div className="mainhercardss">
       
-        <div id='cardshere'>
+        <div id='cardshere' data-aos="fade-up">
           <div className='mydivimg'><img src={juice} alt="juice" /></div>
 
           <div className='titsh'>
@@ -158,7 +165,7 @@ const Reviews = () => {
         </div>
 
         
-        <div id='cardshere'>
+        <div id='cardshere' data-aos="fade-up">
           <div className='mydivimg'><img src={ortopus} alt="ortopus" /></div>
 
           <div className='titsh'>
@@ -173,7 +180,7 @@ const Reviews = () => {
            </div>
         </div>
 
-        <div id='cardshere'>
+        <div id='cardshere' data-aos="fade-up">
           <div className='mydivimg'><img src={fanta} alt="fanta" /></div>
 
           <div className='titsh'>
@@ -189,7 +196,7 @@ const Reviews = () => {
         </div>
 
 
-        <div id='cardshere'>
+        <div id='cardshere' data-aos="fade-up">
           <div className='mydivimg'><img src={flows} alt="flows" /></div>
 
           <div className='titsh'>

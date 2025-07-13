@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import {Allpro} from './styles'
 import potato from '../assets/Allproduct/potato.png'
 import { IoIosStarOutline } from "react-icons/io";
@@ -7,11 +7,21 @@ import Violet from '../assets/Allproduct/Violet.png'
 import cream from '../assets/Allproduct/cream.png'
 import Shiso from '../assets/Allproduct/Shiso.png'
 import bannes from '../assets/Allproduct/banner.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 const ProductAll = () => {
+
+    useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <Allpro>
+
+
  
     <div className="allproduct">
       <div className='topone'>
@@ -22,7 +32,7 @@ const ProductAll = () => {
       </div>
 
       <div id="cardshere">
-              <div className="maincards">
+              <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={potato} alt="potato" /></div>
@@ -34,7 +44,7 @@ const ProductAll = () => {
           </div>
       </div>
       
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={egg} alt="egg" /></div>
@@ -46,7 +56,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='newminus'>New</span>
           <div className='imagediv'><img src={Violet} alt="Violet" /></div>
@@ -58,7 +68,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>New</span>
           <div className='imagediv'><img src={cream} alt="cream" /></div>
@@ -70,7 +80,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>New</span>
           <div className='imagediv'><img src={Shiso} alt="Shiso" /></div>
@@ -104,7 +114,7 @@ const ProductAll = () => {
       </div>
 
       <div id="cardshere">
-              <div className="maincards">
+              <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={potato} alt="potato" /></div>
@@ -116,7 +126,7 @@ const ProductAll = () => {
           </div>
       </div>
       
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={egg} alt="egg" /></div>
@@ -128,7 +138,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='newminus'>New</span>
           <div className='imagediv'><img src={Violet} alt="Violet" /></div>
@@ -140,7 +150,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>New</span>
           <div className='imagediv'><img src={cream} alt="cream" /></div>
@@ -152,7 +162,7 @@ const ProductAll = () => {
           </div>
       </div>
 
-      <div className="maincards">
+      <div className="maincards" data-aos="fade-up">
          <div className='maoncardtwo'>
           <span className='new'>New</span>
           <div className='imagediv'><img src={Shiso} alt="Shiso" /></div>
