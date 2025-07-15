@@ -90,9 +90,13 @@ background-color: #ffff;
 
 @media screen and (max-width: 900px){
     font-family: 'Poppins', sans-serif;
-  .icons, .middle{
-    display: none;
-  }
+#iconshere{
+  display: none;
+}
+
+.middle{
+  display: none;
+}
 
 .rightnav {
   position: fixed;
