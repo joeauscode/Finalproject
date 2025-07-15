@@ -96,10 +96,10 @@ const searchbar = () => {
 {showSearch && (
        <div className="searchbar">
       
-      <div className="sear">
+      <form className="sear">
         <input type="text" name="" id="" placeholder="Search..." />
         <button type="submit">Search</button>
-      </div>
+      </form>
      </div>
 )}
 

@@ -1190,23 +1190,31 @@ background-color: #f7f5f4;
   margin-left: 3.5rem;
   color: #287e2d;
   border: 0.3px solid #287e2d;
-  padding: 8px 18px;
+  padding: 10px 18px;
   border-radius: 6px;
   width: 200px;
+  border: none;
+      border-bottom-right-radius: 0rem;
+    border-top-right-radius: 0rem;
+    outline: none;
  }
 
  button{
   background-color: #287e2d;
   color: whitesmoke;
    border: none;
-   padding: 8px 14px;
+   padding: 10px 18px;
+   border: none;
     border-radius: 6px;
     cursor: pointer;
+    border-bottom-left-radius: 0rem;
+    border-top-left-radius: 0rem;
  }
 .subscrib > span{
   color:  #435b53;
   font-size: 17px;
 }
+
 
 .lists{
   display: flex;
