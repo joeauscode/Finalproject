@@ -1112,7 +1112,7 @@ background-color: #f7f5f4;
   margin-left: 3.5rem;
   color: #287e2d;
   border: 0.3px solid #287e2d;
-  padding: 8px 14px;
+  padding: 8px 18px;
   border-radius: 6px;
   width: 200px;
  }
@@ -1153,11 +1153,60 @@ gap: 8px;
   border-bottom: 0.3px solid lightgray;
 }
 
-
+a{
+  text-decoration: none;
+}
 
 @media screen and (max-width: 800px) {
    .footerimage{
     width: 100%;
+  
+    
+  .footerimage{
+    position: relative;
+
+  }
+
+  a{
+    font-size: 16px;
+  }
+
+  .subscrib{
+    position: absolute;
+    /* border: 2px solid; */
+    flex-direction: column;
+    margin-top: 62rem;
+    width: 100%;
+    background-color: #f7f5f4;
+  }
+
+  .listdays>div{
+    font-size: 14px;
+  }
+
+  ul>li:nth-child(1){
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+  .shifg{
+    padding: 4rem 0rem;
+  }
+  .subscrib>form{
+    width: 80%;
+    display: flex;
+  }
+
+  button{
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  input{
+    width: 100%;
+       border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 15px 1rem;
+    font-size: 15px;
+  }
 
    }
 
@@ -1170,19 +1219,15 @@ gap: 8px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.3rem;
+    gap: 2rem;
+    margin-top: 1rem;
    }
    li{
     text-align: center;
+    margin-bottom: 13px;
    }
    
-   .subscrib{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-
-   }
+  
 
    input{
    padding: 8px 3px;
