@@ -94,17 +94,16 @@ background-color: #ffff;
     display: none;
   }
 
-  .rightnav{
-    position: absolute;
-    /* border: 2px solid ; */
-    width: 100%;
-    left: 0;
-    margin-top: 37.8rem;
-    z-index: 1000;
-    position: fixed;
-    background-color: whitesmoke;
-    padding: 10px 0px;
-  }
+.rightnav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
   .mobileview{
     display: flex;
     justify-content: space-between;
