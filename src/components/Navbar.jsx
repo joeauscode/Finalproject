@@ -37,7 +37,7 @@ const searchbar = () => {
           <span style={{fontSize: '20px'}}>Close</span>
           <span><IoClose style={{fontSize: '25px'}} /></span>
         </div>
-             <ul>
+             <ul onClick={() => {searchbar(); setShowSearch(false);}} >
                <li>Home <IoIosArrowDown /></li>
                <li>Shops <IoIosArrowDown /></li>
                <li>Product <IoIosArrowDown /></li>
@@ -46,7 +46,7 @@ const searchbar = () => {
                <li>Blog <IoIosArrowDown /></li>
                <li>Contact Us</li>
              </ul> 
-        <div className='icons'>
+        <div className='icons' onClick={() => {searchbar(); setShowSearch(false);}} >
        <span><FaXTwitter /></span>
        <span><FaFacebookF /></span>
        <span><FaInstagram /></span>
@@ -56,16 +56,16 @@ const searchbar = () => {
       </div>
     )}
 
-      <div className="mobileview">
+      <div className="mobileview" >
         <div className="menuebar" onClick={Menubar}>
-         <span><AiOutlineMenu style={{fontSize: '20px', cursor: 'pointer'}} /></span>
+         <span onClick={() => {searchbar(); setShowSearch(false);}} ><AiOutlineMenu style={{fontSize: '20px', cursor: 'pointer'}} /></span>
         </div>
 
        <div className="logo">
         <img src={logo} alt="Logo" />
        </div>
 
-        <div className="searchicon">
+        <div className="searchicon" onClick={() => {Menubar(); setMenuBar(false);}}>
          <span onClick={searchbar}><BiSearchAlt style={{fontSize: '25px', cursor: 'pointer'}} /></span>
         </div>
       </div>

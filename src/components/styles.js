@@ -97,7 +97,7 @@ background-color: #ffff;
   z-index: 500;
   /* display: none; */
   top: 26%;
-
+  
 }
 
 .sear{
@@ -163,10 +163,12 @@ background-color: #ffff;
 .searchbar{
   width: 100%;
    top: 15%;
+
 }
 
 .sear{
   width: 90%;
+  top: 0;
  
 }
 
