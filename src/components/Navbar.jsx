@@ -81,8 +81,8 @@ const [menuBar, setMenuBar] = useState(false);
      <div className='rightnav'>
       <a href=""><BiSearchAlt style={{fontSize: '23px',}} />Search</a>
       <a href=""><VscAccount style={{fontSize: '22px',}} /> Account</a>
-      <a href=""><PiShoppingBagOpenLight style={{fontSize: '22px',}} />  Cart</a>
-      <a href=""><img src={heart} alt="Heart" style={{width: '20px',}} />  Wishlist</a>
+      <a href=""><PiShoppingBagOpenLight style={{fontSize: '22px',}} />  Cart 10</a>
+      <a href=""><img src={heart} alt="Heart" style={{width: '20px',}} />  Wishlist 10</a>
      </div>
      </div>
     </Nav>

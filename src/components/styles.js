@@ -90,8 +90,20 @@ background-color: #ffff;
 
 @media screen and (max-width: 900px){
     font-family: 'Poppins', sans-serif;
-  .navwrapper{
+  .icons, .middle{
     display: none;
+  }
+
+  .rightnav{
+    position: absolute;
+    /* border: 2px solid ; */
+    width: 100%;
+    left: 0;
+    margin-top: 37.8rem;
+    z-index: 1000;
+    position: fixed;
+    background-color: whitesmoke;
+    padding: 10px 0px;
   }
   .mobileview{
     display: flex;
@@ -1175,7 +1187,7 @@ a{
     position: absolute;
     /* border: 2px solid; */
     flex-direction: column;
-    margin-top: 62rem;
+    margin-top: 60.5rem;
     width: 100%;
     background-color: #f7f5f4;
   }
