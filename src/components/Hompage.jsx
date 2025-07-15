@@ -43,7 +43,7 @@ const HomepageComponent = () => {
 
 
   return (
-    <Homepage>
+    <Homepage >
       <div className="homewrapper">
        <div className='first'>
         <h4>Top seller in the week</h4>

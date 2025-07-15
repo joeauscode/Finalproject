@@ -16,6 +16,12 @@ import { IoClose } from "react-icons/io5";
 const Navbar = () => {
 
 const [menuBar, setMenuBar] = useState(false);
+const [showSearch, setShowSearch] = useState(false); // note the S
+
+
+const searchbar = () => {
+  setShowSearch(prev => !prev)
+}
 
   const Menubar = () => {
    setMenuBar(prev => !prev)
@@ -60,31 +66,43 @@ const [menuBar, setMenuBar] = useState(false);
        </div>
 
         <div className="searchicon">
-         <span><BiSearchAlt style={{fontSize: '25px', cursor: 'pointer'}} /></span>
+         <span onClick={searchbar}><BiSearchAlt style={{fontSize: '25px', cursor: 'pointer'}} /></span>
         </div>
       </div>
 
 
 
 
-     <div className="navwrapper">
-      <div className='icons' id='iconshere'>
+     <div className="navwrapper" >
+      <div className='icons' id='iconshere' onClick={() => {searchbar(); setShowSearch(false);}}>
        <span><FaXTwitter /></span>
        <span><FaFacebookF /></span>
        <span><FaInstagram /></span>
        <span><FaYoutube /></span>
        <span><FaTiktok /></span>
      </div>
-     <div className='middle'>
+     <div className='middle' onClick={() => {searchbar(); setShowSearch(false);}}>
       <img src={logo} alt="Logo" />
      </div>
      <div className='rightnav'>
-      <a href=""><BiSearchAlt style={{fontSize: '23px',}} />Search</a>
-      <a href=""><VscAccount style={{fontSize: '22px',}} /> Account</a>
-      <a href=""><PiShoppingBagOpenLight style={{fontSize: '22px',}} />  Cart 10</a>
-      <a href=""><img src={heart} alt="Heart" style={{width: '20px',}} />  Wishlist 10</a>
+      <span className='searbarhere' onClick={searchbar}><BiSearchAlt style={{fontSize: '23px',}} />Search</span>
+      <a href=""><VscAccount style={{fontSize: '22px',}} onClick={() => {searchbar(); setShowSearch(false);}} /> Account</a>
+      <a href=""><PiShoppingBagOpenLight style={{fontSize: '22px',}} onClick={() => {searchbar(); setShowSearch(false);}}/>  Cart 10</a>
+      <a href=""><img src={heart} alt="Heart" style={{width: '20px',}} onClick={() => {searchbar(); setShowSearch(false);}} />  Wishlist 10</a>
      </div>
      </div>
+
+
+{showSearch && (
+       <div className="searchbar">
+      
+      <div className="sear">
+        <input type="text" name="" id="" placeholder="Search..." />
+        <button type="submit">Search</button>
+      </div>
+     </div>
+)}
+
     </Nav>
   )
 }

@@ -88,6 +88,52 @@ background-color: #ffff;
   display: none;
 }
 
+.searchbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 500;
+  /* display: none; */
+  top: 26%;
+
+}
+
+.sear{
+  border-radius: 10px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* border: 0.1px solid lightgray; */
+      background-color: #ffff;
+      box-shadow: 1px 1px 3px;
+}
+
+.sear>input{
+    background-color: #ffff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  width: 100%;
+    padding: 20px 20px;
+   border: none;
+   outline: none;
+   font-size: 19px;
+
+}
+.sear>button{
+  height: 70px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+   padding: 20px 20px;
+   color: whitesmoke;
+   font-weight: 600;
+    background-color: green;
+    cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
 @media screen and (max-width: 900px){
     font-family: 'Poppins', sans-serif;
 #iconshere{
@@ -95,6 +141,10 @@ background-color: #ffff;
 }
 
 .middle{
+  display: none;
+}
+
+.searbarhere{
   display: none;
 }
 
@@ -106,7 +156,20 @@ background-color: #ffff;
   background-color: whitesmoke;
   padding: 10px 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-evenly;
 }
+
+.searchbar{
+  width: 100%;
+   top: 15%;
+}
+
+.sear{
+  width: 90%;
+ 
+}
+
 
   .mobileview{
     display: flex;
