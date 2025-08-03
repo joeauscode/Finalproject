@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useMemo } from 'react';
 import {Allpro} from './styles'
 import potato from '../assets/Allproduct/potato.png'
 import { IoIosStarOutline } from "react-icons/io";
@@ -14,7 +14,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 
 
-const ProductAll = ({addToCartts, addToCatts}) => {
+const ProductAll = ({addToCart}) => {
 
     useEffect(() => {
     AOS.init({ duration: 800 });
@@ -25,23 +25,38 @@ const ProductAll = ({addToCartts, addToCatts}) => {
 
 
   const produc = [
-    {id: 1, name: 'Yellow Potatoes', price: 254.00, oldPrice: 300.00, img: potato},
-    {id: 2, name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
-    {id: 3, name: 'Violet Cauliflower', price: 10,  img: Violet},
-    {id: 4, name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
-    {id: 5, name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
+    {name: 'Yellow Potatoes', price: 254.00, oldPrice: 300.00, img: potato},
+    {name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
+    {name: 'Violet Cauliflower', price: 10,  img: Violet},
+    {name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
+    {name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
   ];
 
 
   const productions = [
-    {id: 1, name: 'Yellow Potatoess', price: 254.00, oldPrice: 300.00, img: potato},
-    {id: 2, name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
-    {id: 3, name: 'Violet Cauliflower', price: 10,  img: Violet},
-    {id: 4, name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
-    {id: 5, name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
+    { name: 'Yellow Potatoess', price: 254.00, oldPrice: 300.00, img: potato},
+    { name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
+    { name: 'Violet Cauliflower', price: 10,  img: Violet},
+    { name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
+    { name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
   ];
 
 
+  
+
+const producWithID = useMemo(() =>
+  produc.map((item) => ({
+    ...item,
+    id: `${Math.floor(10000 + Math.random() * 90000)}`
+  }))
+, []);
+
+const productionWithID = useMemo(() =>
+  productions.map((item) => ({
+    ...item,
+    id: `${Math.floor(10000 + Math.random() * 90000)}`
+  }))
+, []);
 
 
 
@@ -61,17 +76,17 @@ const ProductAll = ({addToCartts, addToCatts}) => {
 
       <div id="cardshere">
 
-        {produc.map((pros) => (
-        <div className="maincards" data-aos="fade-up" key={pros.id}>
+        {producWithID.map((item) => (
+        <div className="maincards" data-aos="fade-up" key={item.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
-          <div className='imagediv'><img src={pros.img} alt={pros.name} /></div>
-          <div style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px'}} ><FaShoppingCart className='onlcikhover' onClick={() => addToCartts(produc)} /></div>
+          <div className='imagediv'><img src={item.img} alt={item.name} /></div>
+          <div style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px'}} ><FaShoppingCart className='onlcikhover' onClick={() => addToCart(item)} /></div>
          </div>
           <div className='buttom'>
-           <span>{pros.name}</span>
+           <span>{item.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>${pros.price} <span className='strock'>{pros.oldPrice}</span></span>
+          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
           </div>
       </div>
         ))}
@@ -100,12 +115,12 @@ const ProductAll = ({addToCartts, addToCatts}) => {
 
 
       <div id="cardshere">
-  {productions.map((items) => (
+  {productionWithID.map((items) => (
         <div className="maincards" data-aos="fade-up" key={items.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={items.img} alt={items.name} /></div>
-          <div  style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px' }}><FaShoppingCart onClick={addToCatts} className='onlcikhover' /></div>
+          <div  style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px' }}><FaShoppingCart onClick={() => addToCart (items)} className='onlcikhover' /></div>
          </div>
           <div className='buttom'>
            <span>{items.name}</span>

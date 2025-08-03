@@ -265,20 +265,35 @@ position: relative;
  color: red;
 }
 
-.cartsitems{
-position: absolute;
-border: 2px solid green;
-width: 100%;
-justify-content: center;
-align-items: center;
-top: 5%;
+.overblur{
+
+  position: absolute;
+  width: 800%;
+  height: calc(100% + 500px);
+  top: 0%;
+  backdrop-filter: blur(2px); /* increase for stronger blur */
+  background-color: rgba(255, 255, 255, 0.3);
+  display: none;
+}
+.cartsitems {
+    position: absolute;
+     z-index: 1000;
+       top: 3%;
+
+           width: 100%;
 }
 
 .itmescart{
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
   margin: auto;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+padding: 1rem 2rem;
+font-size: 14px;
+
+
 }
 
 .homewrapper{

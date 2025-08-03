@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useMemo, useState} from 'react'
 import {Homepage} from './styles'
 import homepage from '../assets/homepage.png'
 import { SlPlane } from "react-icons/sl";
@@ -46,14 +46,20 @@ const HomepageComponent = () => {
   }, []);
 
 
-  const Prod = [
-    {id: 1, name: 'Aloe Arborescens', price: 60.00, oldPrice: 150.00, img: aloe, available: 40},
-    {id: 2, name: 'Annurca apples', price: 19.00, oldPrice: 29.00, img: apple, available: 35},
-    {id: 3, name: 'Apple Granny', price: 19.00, oldPrice: 29.00, img: froud, available: 40},
-    {id: 4, name: 'Bananas', price: 29.00, oldPrice: 39.00, img: banana, available: 20},
-    {id: 5, name: 'Crescione Aclla Cress', price: 499.00,  img: flowers, available: 15},
+  const product = [
+    { name: 'Aloe Arborescens', price: 60.00, oldPrice: 150.00, img: aloe, available: 40},
+    { name: 'Annurca apples', price: 19.00, oldPrice: 29.00, img: apple, available: 35},
+    { name: 'Apple Granny', price: 19.00, oldPrice: 29.00, img: froud, available: 40},
+    {name: 'Bananas', price: 29.00, oldPrice: 39.00, img: banana, available: 20},
+    { name: 'Crescione Aclla Cress', price: 499.00,  img: flowers, available: 15},
   ];
 
+  const produtasuuid = useMemo(() =>
+    product.map((items) => ({
+      ...items,
+      id: `${Math.floor(10000 + Math.random() * 90000)}`
+    })),
+  [])
 
 
   //   const [cart, setCarts] = useState(() => {
@@ -61,11 +67,6 @@ const HomepageComponent = () => {
   //   return saved ? JSON.parse(saved) : [];
   // });
 
-  const addToCarts = (Prod) => {
-    const updated = [...cart, Prod];
-    setCart(updated);
-    localStorage.setItem("cart", JSON.stringify(updated));
-  };
 
 
 // featres brand
@@ -82,25 +83,36 @@ const HomepageComponent = () => {
     localStorage.setItem("cart", JSON.stringify(updated));
   };
 
-  const addToCartts = (produc) => {
-    const updated = [...cart, produc];
-    setCart(updated);
-    localStorage.setItem("cart", JSON.stringify(updated));
+
+ 
+
+
+
+  // carts
+  const [showCart, setShowCart] = useState(false);
+
+  const handleShowCart = () => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    } else {
+      setCart([]);
+    }
+    setShowCart(true);
   };
 
-  const addToCatts = (productions) => {
-    const updated = [...cart, productions];
-    setCart(updated);
-    localStorage.setItem("cart", JSON.stringify(updated));
-  };
 
-
-
+  // remove items from cart
+const handleRemoveItem = (indexToRemove) => {
+  const updatedCart = cart.filter((_, index) => index !== indexToRemove);
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+};
 
   return (
     <Homepage >
    
-    <Navbar cartCount={cart.length} showSearch={showSearch} setShowSearch={setShowSearch}/>
+    <Navbar cartCount={cart.length} showSearch={showSearch} setShowSearch={setShowSearch} handleShowCart={handleShowCart}/>
        <Navbutton />
 
       <div className="homewrapper">
@@ -148,21 +160,21 @@ const HomepageComponent = () => {
 
         <div className="titlecards">
 
-          {Prod.map((produ) => (
-           <div className='cards' data-aos="fade-up" key={produ.id}>
+          {produtasuuid.map((items) => (
+           <div className='cards' data-aos="fade-up" key={items.id}>
 
   
           <span className='new'>New</span>
-          <div className='titleimg'><img src={produ.img} alt={produ.name}/></div>
-          <div style={{position: 'absolute', top: '49%', right: '10%', color: '#28a745', fontSize: '20px'}} onClick={() => addToCarts(Prod)}><FaShoppingCart className='onlcikhover' /></div>
+          <div className='titleimg'><img src={items.img} alt={items.name}/></div>
+          <div style={{position: 'absolute', top: '49%', right: '10%', color: '#28a745', fontSize: '20px'}} onClick={() => addToCart(items)}><FaShoppingCart className='onlcikhover' /></div>
           <div>
-            <span className='titleprice'>${produ.price} - ${produ.oldPrice ?? ''}</span>
+            <span className='titleprice'>${items.price} - ${items.oldPrice ?? ''}</span>
               <p className='titleproduct'>Aloe Arborescens</p>
               <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
               <div className='titleline'></div>
                <div className='titleinstoc'>
                 <span>Sold: 60</span>
-              <span>{produ.available}</span>
+              <span>{items.available}</span>
                </div>
           </div>
           </div>
@@ -226,6 +238,8 @@ const HomepageComponent = () => {
 
 
 {/* carts */}
+<div className="overblur"></div>
+{showCart && (
 <div className="cartsitems">
    <div className="itmescart">
     <span>ID</span>
@@ -233,9 +247,30 @@ const HomepageComponent = () => {
     <span>price</span>
     <span>Remove Items</span>
    </div>
-</div>
+  {cart.length === 0 ? (
+  <p>Your cart is empty.</p>
+) : (
+  cart.map((item, index) => (
+    <div className="itmescart" key={index}>
+      <span>{item.id}</span>
+      <span>{item.name}</span>
+      <span>${item.price}</span>
+      <span>
+        <button onClick={() => handleRemoveItem(index)}>Remove</button>
+      </span>
+    </div>
+  ))
+)}
 
-      <ProductAll data-aos="fade-up" addToCartts={addToCartts} addToCatts={addToCatts} />
+
+
+
+</div>
+)}
+
+
+
+      <ProductAll data-aos="fade-up" addToCart={addToCart} />
 
       <Featurebran  data-aos="fade-up" addToCart={addToCart}/>
       <Reviews  />
