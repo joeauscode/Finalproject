@@ -68,7 +68,7 @@ background-color: #ffff;
   justify-content: center;
 }
 
-.rightnav> a{
+.rightnav> span{
   display: flex;
   margin-top: 0;
   flex-direction: column;
@@ -77,7 +77,7 @@ background-color: #ffff;
   padding: 0;
    color: #306c33;
   text-decoration: none;
-  font-size: 16px;
+  cursor: pointer;
 }
 
 .mobileview{
@@ -88,21 +88,19 @@ background-color: #ffff;
   display: none;
 }
 
-.searchbar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.searchbarone{
   position: absolute;
-  width: 100%;
-  z-index: 500;
-  /* display: none; */
-  top: 26%;
-  
+  width: 34%;
+  left: 30%;
+  top: 0.1%;
+  align-items: center;
+
 }
 
 .sear{
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,14 +122,16 @@ background-color: #ffff;
 }
 .sear>button{
   height: 70px;
+  border-radius: 0rem;
   border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-   padding: 20px 20px;
+  border-bottom-right-radius:10px;
+
+   padding: 20px 40px;
    color: whitesmoke;
    font-weight: 600;
     background-color: green;
     cursor: pointer;
-  border: none;
+
   font-size: 15px;
 }
 @media screen and (max-width: 900px){
@@ -160,16 +160,22 @@ background-color: #ffff;
   justify-content: space-evenly;
 }
 
-.searchbar{
-  width: 100%;
-   top: 15%;
+.searchbarone{
+  width: 90%;
+   display: block;
+   left: 6%;
+   top: 0.7%;
 
 }
 
 .sear{
-  width: 90%;
+  width: 100%;
   top: 0;
  
+}
+
+.sear>input{
+  padding: 0px 20px;
 }
 
 
@@ -190,7 +196,7 @@ background-color: #ffff;
     height: 100%;
     z-index: 300;
     width: 250px;
-    top: 100px;
+    top: 70px;
   }
 
   .cloasdiv{
@@ -253,6 +259,27 @@ export const Homepage = styled.main`
 background-color: #f3f3f7;
 position: relative;
   font-family: 'Poppins', sans-serif;
+
+
+   .onlcikhover:hover{
+ color: red;
+}
+
+.cartsitems{
+position: absolute;
+border: 2px solid green;
+width: 100%;
+justify-content: center;
+align-items: center;
+top: 5%;
+}
+
+.itmescart{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: auto;
+}
 
 .homewrapper{
   display: flex;
@@ -384,7 +411,7 @@ text-transform: capitalize;
   border: 1px solid lightgray;
   padding: 8px 8px;
    border-radius: 5px;
-  
+  cursor: pointer;
 }
 
 .titleimg{
@@ -432,6 +459,7 @@ text-transform: capitalize;
   font-size: 900;
   font-size: 13px;
   margin-top: 10px;
+ 
 }
 
 .titlepriceminue{
@@ -501,6 +529,7 @@ text-transform: capitalize;
   background-color: #f4f6fa;
     border-radius: 10px;
 width: 100%;
+cursor: pointer;
   
 }
 
@@ -619,6 +648,7 @@ img{
 
 
 
+
 .mainofer{
  display: flex;
  flex-direction: column;
@@ -675,6 +705,8 @@ export const Allpro = styled.main`
   padding: 10px 10px;
   border: 0.4px solid lightgrey;
   border-radius: 5px;
+  cursor: pointer;
+  position: relative;
 
   
 }
@@ -772,6 +804,11 @@ color: #e0654cff;
   width: 100%;
 }
 
+
+.onlcikhover:hover{
+ color: red;
+}
+
 @media screen and (max-width: 800px) {
 
   .allproduct{
@@ -827,6 +864,10 @@ color: #e0654cff;
 export const Feature = styled.main`
  font-family: 'Poppins', sans-serif;
 
+ .onlcikhover:hover{
+ color: red;
+}
+
  .brandheader{
   font-size: 17px;
   font-weight: 700;
@@ -856,6 +897,8 @@ export const Feature = styled.main`
    padding: 10px 14px;
    border-radius: 5px;
    gap: 8px;
+   position: relative;
+   cursor: pointer;
 }
 
 .myimgediv{

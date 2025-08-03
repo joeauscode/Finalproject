@@ -13,8 +13,33 @@ import Granny from '../assets/Feature/Granny.png'
 import Baanas from '../assets/Feature/bana.png'
 import avaocado from '../assets/Feature/avocado.png'
 import cabbage from '../assets/Feature/cabbage.png'
+import { FaShoppingCart } from "react-icons/fa";
 
-const Featurebran = () => {
+
+const Featurebran = ({addToCart}) => {
+
+const products = [
+  { id: 1, name: "Annurca apples", price: 19, oldPrice: 29, img: apples },
+  { id: 2, name: "Fresh bergamot", price: 320, oldPrice: 390, img: bergamot },
+  { id: 3, name: "Fresh Strawberries", price: 69, oldPrice: 100, img: Strawberries },
+  { id: 4, name: "Navel orange", price: 49, oldPrice: 59, img: orange },
+  { id: 5, name: "Orange cauliflower", price: 39, oldPrice: 45, img: cauliflower },
+  { id: 6, name: "Organic Almaverde Bio", price: 29, oldPrice: 35, img: Almaverde },
+  { id: 7, name: "Organic Fresh Bananas", price: 14, oldPrice: 16, img: Bananas },
+  { id: 8, name: "Organic Lemon", price: 40, oldPrice: null, img: Lemon },
+  { id: 9, name: "Apples Granny", price: 19, oldPrice: 29, img: Granny },
+  { id: 10, name: "Bananas", price: 29, oldPrice: 39, img: Baanas },
+  { id: 11, name: "Pinkerton Avocado", price: 29, oldPrice: 39, img: avaocado },
+  { id: 12, name: "Red cabbage", price: 50, oldPrice: 55, img: cabbage },
+];
+
+
+
+
+
+
+
+  
   return (
     <Feature>
       <div className="features">
@@ -23,127 +48,19 @@ const Featurebran = () => {
         </div>
         
         <div className="cardsmain">
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={apples} alt="apples" /></div>
+        {products.map((product) => (
+        <div className="featuredcards" style={{position: 'relative'}} key={product.id}>
+         <div className='myimgediv'><img src={product.img} alt={product.name} /></div>
          <div className='cardswrtup'>
-            <span>Annurca apples</span>
+            <span>{product.name}</span>
              <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$19.00 <span className='strock'>$29.00</span></span>
+            <span>${product.price} <span className='strock'>${product.oldPrice}</span></span>
+            <div style={{ position: 'absolute', top: '68%', right: '2%', color: '#28a745', fontSize: '20px', cursor: 'pointer' }} onClick={() => addToCart(product)} role="button"  tabIndex={0} onKeyPress={(e) => { if (e.key === 'Enter') addToCart(product) }}> <FaShoppingCart className='onlcikhover'/></div>
+
          </div>
         </div>
-
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={bergamot} alt="apples" /></div>
-         <div className='cardswrtup'>
-            <span>Fresh bergamot</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$320.00 <span className='strock'>$390.00</span></span>
-         </div>
-        </div>
-        
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Strawberries} alt="apples" /></div>
-         <div className='cardswrtup'>
-            <span>Fresh Strawberries</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$69.00 <span className='strock'>$100.00</span></span>
-         </div>
-        </div>
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={orange} alt="orange" /></div>
-         <div className='cardswrtup'>
-            <span>Navel orange</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$49.00 <span className='strock'>$59.00</span></span>
-         </div>
-        </div>
-
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={cauliflower} alt="orange" /></div>
-         <div className='cardswrtup'>
-            <span>Orange cauliflower</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$39.00 <span className='strock'>$45.00</span></span>
-         </div>
-        </div>
-
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Almaverde} alt="Almaverde" /></div>
-         <div className='cardswrtup'>
-            <span>Organic Almaverde Bio</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$29.00 <span className='strock'>$35.00</span></span>
-         </div>
-        </div>
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Bananas} alt="Bananas" /></div>
-         <div className='cardswrtup'>
-            <span>Organic Fresh Bananas</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$14.00 <span className='strock'>$16.00</span></span>
-         </div>
-        </div>
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Lemon} alt="Lemon" /></div>
-         <div className='cardswrtup'>
-            <span>Organic Lemon</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$40.00</span>
-         </div>
-        </div>
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Granny} alt="Granny" /></div>
-         <div className='cardswrtup'>
-            <span>Apples Granny</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$19.00 <span className='strock'>$29.00</span></span>
-         </div>
-        </div>
-
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={Baanas} alt="Baanas" /></div>
-         <div className='cardswrtup'>
-            <span>Bananas</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$29.00 <span className='strock'>$39.00</span></span>
-         </div>
-        </div>
-
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={avaocado} alt="Pinkerton" /></div>
-         <div className='cardswrtup'>
-            <span>Pinkerton Avocado</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$29.00 <span className='strock'>$39.00</span></span>
-         </div>
-        </div>
-
-        <div className="featuredcards">
-         <div className='myimgediv'><img src={cabbage} alt="cabbage" /></div>
-         <div className='cardswrtup'>
-            <span>Red cabbage</span>
-             <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-            <span>$50.00 <span className='strock'>$55.00</span></span>
-         </div>
-        </div>
-
-
-
-
-
-        </div>
-
-
+        ))}
+      </div>
 
       </div>
     </Feature>

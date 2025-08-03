@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import {Allpro} from './styles'
 import potato from '../assets/Allproduct/potato.png'
 import { IoIosStarOutline } from "react-icons/io";
@@ -9,14 +9,42 @@ import Shiso from '../assets/Allproduct/Shiso.png'
 import bannes from '../assets/Allproduct/banner.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaShoppingCart } from "react-icons/fa";
 
 
 
-const ProductAll = () => {
+
+const ProductAll = ({addToCartts, addToCatts}) => {
 
     useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
+
+
+
+
+
+  const produc = [
+    {id: 1, name: 'Yellow Potatoes', price: 254.00, oldPrice: 300.00, img: potato},
+    {id: 2, name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
+    {id: 3, name: 'Violet Cauliflower', price: 10,  img: Violet},
+    {id: 4, name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
+    {id: 5, name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
+  ];
+
+
+  const productions = [
+    {id: 1, name: 'Yellow Potatoess', price: 254.00, oldPrice: 300.00, img: potato},
+    {id: 2, name: 'Yellow Cherry Tomatoes', price: 15.00, oldPrice: 20.00, img: egg},
+    {id: 3, name: 'Violet Cauliflower', price: 10,  img: Violet},
+    {id: 4, name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
+    {id: 5, name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
+  ];
+
+
+
+
+
 
   return (
     <Allpro>
@@ -32,65 +60,21 @@ const ProductAll = () => {
       </div>
 
       <div id="cardshere">
-              <div className="maincards" data-aos="fade-up">
+
+        {produc.map((pros) => (
+        <div className="maincards" data-aos="fade-up" key={pros.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
-          <div className='imagediv'><img src={potato} alt="potato" /></div>
+          <div className='imagediv'><img src={pros.img} alt={pros.name} /></div>
+          <div style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px'}} ><FaShoppingCart className='onlcikhover' onClick={() => addToCartts(produc)} /></div>
          </div>
           <div className='buttom'>
-           <span>Yellow Potatoes</span>
+           <span>{pros.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$254.00 <span className='strock'>$300.00</span></span>
+          <span>${pros.price} <span className='strock'>{pros.oldPrice}</span></span>
           </div>
       </div>
-      
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>-15%</span>
-          <div className='imagediv'><img src={egg} alt="egg" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Yellow Cherry Tomatoes</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$15.00 <span className='strock'>$20.00</span></span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='newminus'>New</span>
-          <div className='imagediv'><img src={Violet} alt="Violet" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Violet Cauliflower</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$10.00</span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>New</span>
-          <div className='imagediv'><img src={cream} alt="cream" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Sorbet Mango Ice Cream</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$79.00 <span className='strock'>$100.00</span></span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>New</span>
-          <div className='imagediv'><img src={Shiso} alt="Shiso" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Shiso Leaves Green</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$360.00 <span className='strock'>$400.00</span></span>
-          </div>
-      </div>
+        ))}
 
       </div>
 
@@ -100,7 +84,7 @@ const ProductAll = () => {
 
 
 
-        <div className="allproduct">
+      <div className="allproduct">
       <div className='trending'>
         <div className='tredtop'>
           <span>TOP TRENDING PRODUCT</span>
@@ -113,66 +97,25 @@ const ProductAll = () => {
          </div>
       </div>
 
+
+
       <div id="cardshere">
-              <div className="maincards" data-aos="fade-up">
+  {productions.map((items) => (
+        <div className="maincards" data-aos="fade-up" key={items.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
-          <div className='imagediv'><img src={potato} alt="potato" /></div>
+          <div className='imagediv'><img src={items.img} alt={items.name} /></div>
+          <div  style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px' }}><FaShoppingCart onClick={addToCatts} className='onlcikhover' /></div>
          </div>
           <div className='buttom'>
-           <span>Yellow Potatoes</span>
+           <span>{items.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$254.00 <span className='strock'>$300.00</span></span>
+          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
           </div>
       </div>
+  ))}
+
       
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>-15%</span>
-          <div className='imagediv'><img src={egg} alt="egg" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Yellow Cherry Tomatoes</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$15.00 <span className='strock'>$20.00</span></span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='newminus'>New</span>
-          <div className='imagediv'><img src={Violet} alt="Violet" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Violet Cauliflower</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$10.00</span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>New</span>
-          <div className='imagediv'><img src={cream} alt="cream" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Sorbet Mango Ice Cream</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$79.00 <span className='strock'>$100.00</span></span>
-          </div>
-      </div>
-
-      <div className="maincards" data-aos="fade-up">
-         <div className='maoncardtwo'>
-          <span className='new'>New</span>
-          <div className='imagediv'><img src={Shiso} alt="Shiso" /></div>
-         </div>
-          <div className='buttom'>
-           <span>Shiso Leaves Green</span>
-          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>$360.00 <span className='strock'>$400.00</span></span>
-          </div>
-      </div>
 
       </div>
 

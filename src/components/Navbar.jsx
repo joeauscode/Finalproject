@@ -13,10 +13,10 @@ import { IoClose } from "react-icons/io5";
 
 
 
-const Navbar = () => {
+const Navbar = ({cartCount, showSearch, setShowSearch}) => {
 
 const [menuBar, setMenuBar] = useState(false);
-const [showSearch, setShowSearch] = useState(false); // note the S
+// const [showSearch, setShowSearch] = useState(false); // note the S
 
 
 const searchbar = () => {
@@ -32,12 +32,12 @@ const searchbar = () => {
     <Nav>
     {menuBar && (
 
-         <div className="lefdrop" onClick={Menubar}>
-        <div className="cloasdiv">
+         <div className="lefdrop" >
+        <div className="cloasdiv" onClick={()=> {setMenuBar(false)}}>
           <span style={{fontSize: '20px'}}>Close</span>
           <span><IoClose style={{fontSize: '25px'}} /></span>
         </div>
-             <ul onClick={() => {searchbar(); setShowSearch(false);}} >
+             <ul onClick={searchbar} >
                <li>Home <IoIosArrowDown /></li>
                <li>Shops <IoIosArrowDown /></li>
                <li>Product <IoIosArrowDown /></li>
@@ -46,7 +46,7 @@ const searchbar = () => {
                <li>Blog <IoIosArrowDown /></li>
                <li>Contact Us</li>
              </ul> 
-        <div className='icons' onClick={() => {searchbar(); setShowSearch(false);}} >
+        <div className='icons' onClick={() => {setShowSearch(false);}} >
        <span><FaXTwitter /></span>
        <span><FaFacebookF /></span>
        <span><FaInstagram /></span>
@@ -57,16 +57,16 @@ const searchbar = () => {
     )}
 
       <div className="mobileview" >
-        <div className="menuebar" onClick={Menubar}>
-         <span onClick={() => {searchbar(); setShowSearch(false);}} ><AiOutlineMenu style={{fontSize: '20px', cursor: 'pointer'}} /></span>
+        <div className="menuebar" onClick={() => {Menubar(), setShowSearch(false);}}>
+         <span onClick={() => { setShowSearch(false);}} ><AiOutlineMenu style={{fontSize: '20px', cursor: 'pointer'}} /></span>
         </div>
 
-       <div className="logo">
-        <img src={logo} alt="Logo" />
+       <div className="logo" onClick={() => {setShowSearch(false);}}>
+        <img  src={logo} alt="Logo" onClick={() => {setMenuBar(false);}} />
        </div>
 
-        <div className="searchicon" onClick={() => {Menubar(); setMenuBar(false);}}>
-         <span onClick={searchbar}><BiSearchAlt style={{fontSize: '25px', cursor: 'pointer'}} /></span>
+        <div className="searchicon" onClick={() => {searchbar(), setMenuBar(false);}}>
+         <span ><BiSearchAlt style={{fontSize: '25px', cursor: 'pointer'}} /></span>
         </div>
       </div>
 
@@ -74,27 +74,28 @@ const searchbar = () => {
 
 
      <div className="navwrapper" >
-      <div className='icons' id='iconshere' onClick={() => {searchbar(); setShowSearch(false);}}>
+      <div className='icons' id='iconshere' onClick={() => {setShowSearch(false);}}>
        <span><FaXTwitter /></span>
        <span><FaFacebookF /></span>
        <span><FaInstagram /></span>
        <span><FaYoutube /></span>
        <span><FaTiktok /></span>
      </div>
-     <div className='middle' onClick={() => {searchbar(); setShowSearch(false);}}>
+     <div className='middle'>
       <img src={logo} alt="Logo" />
      </div>
      <div className='rightnav'>
       <span className='searbarhere' onClick={searchbar}><BiSearchAlt style={{fontSize: '23px',}} />Search</span>
-      <a href=""><VscAccount style={{fontSize: '22px',}} onClick={() => {searchbar(); setShowSearch(false);}} /> Account</a>
-      <a href=""><PiShoppingBagOpenLight style={{fontSize: '22px',}} onClick={() => {searchbar(); setShowSearch(false);}}/>  Cart 10</a>
-      <a href=""><img src={heart} alt="Heart" style={{width: '20px',}} onClick={() => {searchbar(); setShowSearch(false);}} />  Wishlist 10</a>
+      <span><VscAccount style={{fontSize: '22px',}} /> Account</span>
+      <span style={{ cursor: 'pointer', fontSize: '17px', userSelect: 'none' }} ><PiShoppingBagOpenLight style={{ marginRight: '6px' }} />Cart {cartCount}</span>
+
+      <span><img src={heart} alt="Heart" style={{width: '20px',}}/>  Wishlist 10</span>
      </div>
      </div>
 
 
 {showSearch && (
-       <div className="searchbar">
+       <div className="searchbarone">
       
       <form className="sear">
         <input type="text" name="" id="" placeholder="Search..." />

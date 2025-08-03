@@ -14,6 +14,10 @@ import flowers from '../assets/titlecard/flower.png'
 import fish from '../assets/topoffer/fish.png'
 import paper from '../assets/topoffer/pepper.png'
 import meat from '../assets/topoffer/meat.png'
+import { FaShoppingCart } from "react-icons/fa";
+import Navbar from './Navbar';
+import Navbutton from './Navbutton'
+
 
 
 import ProductAll from './ProductAll'
@@ -42,8 +46,63 @@ const HomepageComponent = () => {
   }, []);
 
 
+  const Prod = [
+    {id: 1, name: 'Aloe Arborescens', price: 60.00, oldPrice: 150.00, img: aloe, available: 40},
+    {id: 2, name: 'Annurca apples', price: 19.00, oldPrice: 29.00, img: apple, available: 35},
+    {id: 3, name: 'Apple Granny', price: 19.00, oldPrice: 29.00, img: froud, available: 40},
+    {id: 4, name: 'Bananas', price: 29.00, oldPrice: 39.00, img: banana, available: 20},
+    {id: 5, name: 'Crescione Aclla Cress', price: 499.00,  img: flowers, available: 15},
+  ];
+
+
+
+  //   const [cart, setCarts] = useState(() => {
+  //   const saved = localStorage.getItem("cart");
+  //   return saved ? JSON.parse(saved) : [];
+  // });
+
+  const addToCarts = (Prod) => {
+    const updated = [...cart, Prod];
+    setCart(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+
+// featres brand
+// ================================================================
+  const [showSearch, setShowSearch] = useState(false);
+    const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem("cart");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const addToCart = (product) => {
+    const updated = [...cart, product];
+    setCart(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+  const addToCartts = (produc) => {
+    const updated = [...cart, produc];
+    setCart(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+  const addToCatts = (productions) => {
+    const updated = [...cart, productions];
+    setCart(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  };
+
+
+
+
   return (
     <Homepage >
+   
+    <Navbar cartCount={cart.length} showSearch={showSearch} setShowSearch={setShowSearch}/>
+       <Navbutton />
+
       <div className="homewrapper">
        <div className='first'>
         <h4>Top seller in the week</h4>
@@ -89,86 +148,26 @@ const HomepageComponent = () => {
 
         <div className="titlecards">
 
-          <div className='cards' data-aos="fade-up">
+          {Prod.map((produ) => (
+           <div className='cards' data-aos="fade-up" key={produ.id}>
+
+  
           <span className='new'>New</span>
-          <div className='titleimg'><img src={aloe} alt="Aloe" /></div>
+          <div className='titleimg'><img src={produ.img} alt={produ.name}/></div>
+          <div style={{position: 'absolute', top: '49%', right: '10%', color: '#28a745', fontSize: '20px'}} onClick={() => addToCarts(Prod)}><FaShoppingCart className='onlcikhover' /></div>
           <div>
-            <span className='titleprice'>$60.00 - $150.00</span>
+            <span className='titleprice'>${produ.price} - ${produ.oldPrice ?? ''}</span>
               <p className='titleproduct'>Aloe Arborescens</p>
               <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
               <div className='titleline'></div>
                <div className='titleinstoc'>
                 <span>Sold: 60</span>
-              <span>Available: 40</span>
+              <span>{produ.available}</span>
                </div>
           </div>
           </div>
-
-
-          <div className='cards' data-aos="fade-up">
-          <span className='newminus'>-34%</span>
-          <div className='titleimg'><img src={apple} alt="apple" /></div>
-          <div>
-            <span className='titlepriceminue'>$19.00 - &nbsp;<span className='strock'>$29.00</span></span>
-              <p className='titleproduct'>Annurca apples</p>
-              <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
-              <div className='titleline'></div>
-               <div className='titleinstoc'>
-                <span>Sold: 65</span>
-              <span>Available: 35</span>
-               </div>
-          </div>
-          </div>
-
-
-          <div className='cards' data-aos="fade-up">
-          <span className='newminus'>-34%</span>
-          <div className='titleimg'><img src={froud} alt="froud" /></div>
-          <div>
-            <span className='titlepriceminue'>$19.00 - &nbsp;<span className='strock'>$29.00</span></span>
-              <p className='titleproduct'>Apple Granny</p>
-              <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
-              <div className='titleline'></div>
-               <div className='titleinstoc'>
-                <span>Sold: 60</span>
-              <span>Available: 40</span>
-               </div>
-          </div>
-          </div>
-
-
-          <div className='cards' data-aos="fade-up">
-          <span className='newminus'>-34%</span>
-          <div className='titleimg'><img src={banana} alt="banana" /></div>
-          <div>
-            <span className='titlepriceminue'>$29.00 - &nbsp;<span className='strock'>$39.00</span></span>
-              <p className='titleproduct'>Bananas</p>
-              <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
-              <div className='titleline'></div>
-               <div className='titleinstoc'>
-                <span>Sold: 68</span>
-              <span>Available: 15</span>
-               </div>
-          </div>
-          </div>
-
-
-          <div className='cards' data-aos="fade-up">
-          <span className='new'>New</span>
-          <div className='titleimg'><img src={flowers} alt="flowers" /></div>
-          <div>
-            <span className='titleprice'>$499.00</span>
-              <p className='titleproduct'>Crescione Aclla Cress</p>
-              <span className='titlestart'><MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /> <MdOutlineStarBorderPurple500 /></span>
-              <div className='titleline'></div>
-               <div className='titleinstoc'>
-                <span>Sold: 41</span>
-              <span>Available: 15</span>
-               </div>
-          </div>
-          </div>
-
-
+   
+          ))}
 
         </div>
       </div>
@@ -187,6 +186,7 @@ const HomepageComponent = () => {
           </div>
           <div className='image'>
             <img src={fish} alt="fish" />
+            {/* <div style={{position: 'absolute', top: '80%', left: '3%', color: '#28a745', fontSize: '20px'}}><FaShoppingCart /></div> */}
           </div>
         </div>
 
@@ -203,6 +203,7 @@ const HomepageComponent = () => {
           </div>
           <div className='imagetwo'>
             <img src={paper} alt="paper" />
+            {/* <div style={{position: 'absolute', top: '80%', left: '3%', color: '#28a745', fontSize: '20px'}}><FaShoppingCart /></div> */}
           </div>
         </div>
 
@@ -218,14 +219,28 @@ const HomepageComponent = () => {
           </div>
           <div className='imagetwo'>
             <img src={meat} alt="paper" />
+            {/* <div style={{position: 'absolute', top: '80%', left: '3%', color: '#28a745', fontSize: '20px'}}><FaShoppingCart /></div> */}
           </div>
         </div>
       </div>
 
 
-      <ProductAll data-aos="fade-up" />
-      <Featurebran  data-aos="fade-up"/>
+{/* carts */}
+<div className="cartsitems">
+   <div className="itmescart">
+    <span>ID</span>
+    <span>Item</span>
+    <span>price</span>
+    <span>Remove Items</span>
+   </div>
+</div>
+
+      <ProductAll data-aos="fade-up" addToCartts={addToCartts} addToCatts={addToCatts} />
+
+      <Featurebran  data-aos="fade-up" addToCart={addToCart}/>
       <Reviews  />
+
+
       
     </Homepage>
   )
