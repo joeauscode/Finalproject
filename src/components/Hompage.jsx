@@ -109,6 +109,16 @@ const handleRemoveItem = (indexToRemove) => {
   localStorage.setItem("cart", JSON.stringify(updatedCart));
 };
 
+
+const Handleremoveall = () => {
+  setCart([]);
+  localStorage.removeItem('cart');
+}
+
+
+const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+
   return (
     <Homepage >
    
@@ -238,17 +248,21 @@ const handleRemoveItem = (indexToRemove) => {
 
 
 {/* carts */}
-<div className="overblur"></div>
+{showCart && (
+<div className="overblur" onClick={() => setShowCart(false)}></div>
+)}
+
 {showCart && (
 <div className="cartsitems">
+  <div className='itmescartclose' onClick={() => setShowCart(false)}>close</div>
    <div className="itmescart">
     <span>ID</span>
     <span>Item</span>
     <span>price</span>
-    <span>Remove Items</span>
+    <span style={{cursor: 'pointer', backgroundColor: 'green', color: 'whitesmoke', padding: '3px 10px'}} onClick={Handleremoveall}>Remove All</span>
    </div>
   {cart.length === 0 ? (
-  <p>Your cart is empty.</p>
+  <p className='itmescart' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Your cart is empty.</p>
 ) : (
   cart.map((item, index) => (
     <div className="itmescart" key={index}>
@@ -263,6 +277,13 @@ const handleRemoveItem = (indexToRemove) => {
 )}
 
 
+
+  <div className="itmescart">
+    <span></span>
+    <span>Total</span>
+    <span>${totalPrice.toFixed(2)}</span>
+    <button>Checkout</button>
+  </div>
 
 
 </div>
