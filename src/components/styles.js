@@ -314,16 +314,39 @@ font-size: 14px;
 @media screen and (max-width: 1000px){
   .itmescart{
     width: 95%;
+        bottom: 0;
 
  
   }
 
+  .spanitems >span:nth-child(1){
+    border-right: 1px solid green;
+     margin-left: -20px; 
+     width: 50px;
+  }
+
+  .spanitems >span:nth-child(2){
+    border-right: 1px solid green;
+     margin-left: -20px; 
+     width: 150px;
+     text-align: center;
+  }
+.latchekc{
+  margin-right: -20px;
+}
   .itmescartclose{
     width: 95%;
+    /* margin-bottom: 1px; */
+    /* margin-top: 10rem; */
+
   }
 
   .cartsitems{
-  top: 1%;
+  /* bottom: 0rem; */
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+
   
   }
 }

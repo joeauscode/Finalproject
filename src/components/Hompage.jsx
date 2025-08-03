@@ -265,11 +265,11 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   <p className='itmescart' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Your cart is empty.</p>
 ) : (
   cart.map((item, index) => (
-    <div className="itmescart" key={index}>
+    <div className="itmescart spanitems" key={index}>
       <span>{item.id}</span>
       <span>{item.name}</span>
       <span>${item.price}</span>
-      <span>
+      <span style={{marginRight: '-20px'}}>
         <button onClick={() => handleRemoveItem(index)}>Remove</button>
       </span>
     </div>
@@ -280,9 +280,9 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   <div className="itmescart">
     <span></span>
-    <span>Total</span>
-    <span>${totalPrice.toFixed(2)}</span>
-    <button>Checkout</button>
+    <span style={{marginRight: '-20px'}}>Total</span>
+    <span style={{marginRight: '-40px'}}>${totalPrice.toFixed(2)}</span>
+    <span className='latchekc' style={{marginRight: '-20px'}}><button>Checkout</button></span>
   </div>
 
 
