@@ -311,6 +311,10 @@ font-size: 14px;
 
 }
 
+.spnproce{
+  margin-right: -80px;
+}
+
 @media screen and (max-width: 1000px){
   .itmescart{
     width: 95%;
@@ -318,7 +322,9 @@ font-size: 14px;
 
  
   }
-
+.spnproce{
+  margin-right: 0px;
+}
   .spanitems >span:nth-child(1){
     border-right: 1px solid green;
      margin-left: -20px; 
@@ -330,6 +336,9 @@ font-size: 14px;
      margin-left: -20px; 
      width: 150px;
      text-align: center;
+  }
+  .spanitems >span:nth-child(4){
+     margin-right: -20px; 
   }
 .latchekc{
   margin-right: -20px;

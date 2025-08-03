@@ -255,11 +255,11 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 {showCart && (
 <div className="cartsitems">
   <div className='itmescartclose' onClick={() => setShowCart(false)}>close</div>
-   <div className="itmescart">
+   <div className="itmescart spanitems">
     <span>ID</span>
     <span>Item</span>
-    <span>price</span>
-    <span style={{cursor: 'pointer', backgroundColor: 'green', color: 'whitesmoke', padding: '3px 10px'}} onClick={Handleremoveall}>Remove All</span>
+    <span className='spnproce'>price</span>
+    <span onClick={Handleremoveall}  ><button>Del</button></span>
    </div>
   {cart.length === 0 ? (
   <p className='itmescart' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Your cart is empty.</p>
@@ -269,8 +269,8 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
       <span>{item.id}</span>
       <span>{item.name}</span>
       <span>${item.price}</span>
-      <span style={{marginRight: '-20px'}}>
-        <button onClick={() => handleRemoveItem(index)}>Remove</button>
+      <span>
+        <button onClick={() => handleRemoveItem(index)}>X</button>
       </span>
     </div>
   ))
@@ -280,9 +280,9 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   <div className="itmescart">
     <span></span>
-    <span style={{marginRight: '-20px'}}>Total</span>
-    <span style={{marginRight: '-40px'}}>${totalPrice.toFixed(2)}</span>
-    <span className='latchekc' style={{marginRight: '-20px'}}><button>Checkout</button></span>
+    <span >Total</span>
+    <span >${totalPrice.toFixed(2)}</span>
+    <span><button>Checkout</button></span>
   </div>
 
 
