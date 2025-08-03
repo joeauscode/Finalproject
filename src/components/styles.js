@@ -268,7 +268,7 @@ position: relative;
 .overblur{
    z-index: 999;
   position: absolute;
-  width: 800%;
+  width: 100%;
   height: calc(100% + 500px);
   top: 0%;
   backdrop-filter: blur(2px); /* increase for stronger blur */
