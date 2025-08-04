@@ -311,6 +311,7 @@ position: relative;
 
    .onlcikhover:hover{
  color: red;
+
 }
 
 .overblur{
@@ -938,6 +939,10 @@ color: #e0654cff;
 }
 
 @media screen and (max-width: 800px) {
+  .addtocatbutton{
+  top: 55% !important;
+  right: 11% !important;
+}
 
   .allproduct{
     width: 100%;
@@ -995,6 +1000,8 @@ export const Feature = styled.main`
  .onlcikhover:hover{
  color: red;
 }
+
+
 
  .brandheader{
   font-size: 17px;
@@ -1063,7 +1070,10 @@ export const Feature = styled.main`
 
 
 @media screen and (max-width: 800px){
-
+.addtocatbutton{
+  top: 58% !important;
+  right: 11% !important;
+}
   .features{
     width: 100%;
   }

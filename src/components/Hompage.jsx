@@ -213,7 +213,7 @@ const totalPrice = cart.reduce((total, item) => total + item.price * (item.quant
   
           <span className='new'>New</span>
           <div className='titleimg'><img src={items.img} alt={items.name}/></div>
-          <div style={{position: 'absolute', top: '49%', right: '10%', color: '#28a745', fontSize: '20px'}} onClick={() => addToCart(items)}><FaShoppingCart className='onlcikhover' /></div>
+          <div className='addtocatbutton' style={{position: 'absolute', top: '52%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(items)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
           <div>
             <span className='titleprice'>${items.price} - ${items.oldPrice ?? ''}</span>
               <p className='titleproduct'>Aloe Arborescens</p>

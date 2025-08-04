@@ -57,7 +57,7 @@ const Productuuid = useMemo(() =>
             <span>{item.name}</span>
              <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
             <span>${item.price} <span className='strock'>${item.oldPrice}</span></span>
-            <div style={{ position: 'absolute', top: '68%', right: '2%', color: '#28a745', fontSize: '20px', cursor: 'pointer' }} onClick={() => addToCart(item)} role="button"  tabIndex={0} onKeyPress={(e) => { if (e.key === 'Enter') addToCart(item) }}> <FaShoppingCart className='onlcikhover'/></div>
+            <div className='addtocatbutton' style={{position: 'absolute', top: '80%', right: '4%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(item)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
 
          </div>
         </div>

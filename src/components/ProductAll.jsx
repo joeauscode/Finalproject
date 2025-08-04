@@ -81,7 +81,7 @@ const productionWithID = useMemo(() =>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={item.img} alt={item.name} /></div>
-          <div style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px'}} ><FaShoppingCart className='onlcikhover' onClick={() => addToCart(item)} /></div>
+          <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(item)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
          </div>
           <div className='buttom'>
            <span>{item.name}</span>
@@ -120,7 +120,7 @@ const productionWithID = useMemo(() =>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
           <div className='imagediv'><img src={items.img} alt={items.name} /></div>
-          <div  style={{position: 'absolute', top: '55%', right: '10%', color: '#28a745', fontSize: '20px' }}><FaShoppingCart onClick={() => addToCart (items)} className='onlcikhover' /></div>
+           <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(items)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover'/></div>
          </div>
           <div className='buttom'>
            <span>{items.name}</span>
