@@ -307,7 +307,7 @@ position: relative;
     display: flex ;
     justify-content: center;
     align-items: center;
-    top: 10%;
+    top: 8%;
    }
 }
 
