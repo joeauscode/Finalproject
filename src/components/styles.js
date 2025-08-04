@@ -512,6 +512,7 @@ button{
   padding: 14px 1rem;
   background-color: #ffff;
   z-index: 2;
+
 }
 
 
@@ -535,7 +536,7 @@ text-transform: capitalize;
     width: 75%;
   margin: auto;
   display: flex;
-  /* gap: 1rem; */
+  gap: 8px;
   align-items: center;
   padding: 1rem 1rem;
   position: relative;
@@ -549,6 +550,7 @@ text-transform: capitalize;
   padding: 8px 8px;
    border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 .titleimg{
