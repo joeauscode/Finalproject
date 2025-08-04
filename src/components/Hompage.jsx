@@ -156,7 +156,9 @@ const totalPrice = cart.reduce((total, item) => total + item.price * (item.quant
     <Navbar cartCount={cart.length} showSearch={showSearch} setShowSearch={setShowSearch} handleShowCart={handleShowCart}/>
        <Navbutton />
 
-
+       {message && (
+  <div className="cart-message">{message}</div>
+)}
 
       <div className="homewrapper">
        <div className='first'>

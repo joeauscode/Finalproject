@@ -5,6 +5,7 @@ import styled from "styled-components";
 export const Header = styled.header`
   background-color: #297d2e;
   padding: .3rem 0rem;
+  top: 0%;
 position: fixed;
 right: 0;
 width: 100%;
@@ -46,7 +47,7 @@ position: fixed;
 right: 0;
 width: 100%;
 z-index: 800;
-top: 3%;
+top: 3.5%;
 
 
 .navwrapper{
@@ -275,17 +276,30 @@ background-color: #f3f3f7;
 position: relative;
   font-family: 'Poppins', sans-serif;
 
+
   .cart-message {
   background-color: #e6ffe6;
   color: #2b7a2b;
   padding: 10px 16px;
   border-radius: 6px;
-  margin: 12px auto;
+ 
   width: fit-content;
   font-weight: bold;
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
   z-index: 1000;
+  position: absolute;
+  z-index: 1000;
+  top: 20%;
+  right: 39%;
+  position: fixed;
+}
+@media screen and (max-width: 1000px) {
+   .cart-message {
+    right: 20%;
+    font-size: 12px;
+    top: 12%;
+   }
 }
 
 @keyframes fadeIn {
@@ -397,7 +411,7 @@ font-size: 14px;
 .homewrapper{
   display: flex;
   width: 65%;
-  margin: auto;
+  margin: 6rem auto;
   justify-content: center;
   align-items: center;
 
@@ -707,7 +721,7 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: auto;
+  margin: 6rem auto;
   justify-content: center;
   align-items: center;
 
@@ -731,6 +745,7 @@ img{
   width: 100%;
   left: 0;
   display: grid;
+  margin-top: -13rem;
   grid-template-columns: repeat(2, 1fr);
   z-index: 1;
 }
