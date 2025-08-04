@@ -5,6 +5,11 @@ import styled from "styled-components";
 export const Header = styled.header`
   background-color: #297d2e;
   padding: .3rem 0rem;
+position: fixed;
+right: 0;
+width: 100%;
+z-index: 900;
+
 
  
 
@@ -37,7 +42,11 @@ export const Nav = styled.nav`
 border-bottom:1px solid lightgray;
 padding: 18px 0rem;
 background-color: #ffff;
-
+position: fixed;
+right: 0;
+width: 100%;
+z-index: 800;
+top: 3%;
 
 
 .navwrapper{
@@ -164,7 +173,7 @@ background-color: #ffff;
   width: 90%;
    display: block;
    left: 6%;
-   top: 0.7%;
+   top: 100%;
 
 }
 
@@ -185,6 +194,7 @@ background-color: #ffff;
     align-items: center;
     width: 90%;
     margin: auto;
+    height: 100%;
   
   }
 
@@ -193,7 +203,7 @@ background-color: #ffff;
     flex-direction: column;
     position: absolute;
     background-color: #297d2e;
-    height: 100%;
+    height: calc(100vh + 500px);
     z-index: 300;
     width: 250px;
     top: 70px;
@@ -231,6 +241,11 @@ background-color: #ffff;
 
 export const Navbutton = styled.nav`
 background-color: #ffff;
+position: fixed;
+right: 0;
+width: 100%;
+z-index: 800;
+top: 15%;
 
   ul{
     display: flex;
@@ -259,6 +274,25 @@ export const Homepage = styled.main`
 background-color: #f3f3f7;
 position: relative;
   font-family: 'Poppins', sans-serif;
+
+  .cart-message {
+  background-color: #e6ffe6;
+  color: #2b7a2b;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 12px auto;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 
    .onlcikhover:hover{

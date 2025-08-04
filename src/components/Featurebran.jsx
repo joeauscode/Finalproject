@@ -38,7 +38,7 @@ const products = [
 const Productuuid = useMemo(() => 
   products.map((item) => ({
     ...item,
-    id: `${Math.floor(10000 + Math.random() * 90000)}`
+    id: item.name.toLowerCase().replace(/\s+/g, '-'), 
   })),
 [])
   

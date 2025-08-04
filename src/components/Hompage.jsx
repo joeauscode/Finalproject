@@ -57,7 +57,7 @@ const HomepageComponent = () => {
   const produtasuuid = useMemo(() =>
     product.map((items) => ({
       ...items,
-      id: `${Math.floor(10000 + Math.random() * 90000)}`
+      id: items.name.toLowerCase().replace(/\s+/g, '-'), 
     })),
   [])
 
@@ -77,11 +77,33 @@ const HomepageComponent = () => {
     return saved ? JSON.parse(saved) : [];
   });
 
-  const addToCart = (product) => {
-    const updated = [...cart, product];
-    setCart(updated);
-    localStorage.setItem("cart", JSON.stringify(updated));
-  };
+ 
+  const [message, setMessage] = useState('')
+
+const addToCart = (product) => {
+  const existingItem = cart.find(item => item.id === product.id);
+
+  let updatedCart;
+
+  if (existingItem) {
+    updatedCart = cart.map(item =>
+      item.id === product.id
+        ? { ...item, quantity: (item.quantity || 1) + 1 }
+        : item
+    
+    );
+  } else {
+    updatedCart = [...cart, { ...product, quantity: 1 }];
+  }
+
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    setMessage(`${product.name} added to cart`);
+  setTimeout(() => setMessage(''), 3000);
+};
+
+
 
 
  
@@ -91,20 +113,26 @@ const HomepageComponent = () => {
   // carts
   const [showCart, setShowCart] = useState(false);
 
+
   const handleShowCart = () => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    } else {
-      setCart([]);
-    }
-    setShowCart(true);
-  };
+  const storedCart = localStorage.getItem("cart");
+  if (storedCart) {
+    const parsed = JSON.parse(storedCart).map(item => ({
+      ...item,
+      quantity: item.quantity || 1 // ensure quantity always exists
+    }));
+    setCart(parsed);
+  } else {
+    setCart([]);
+  }
+  setShowCart(true);
+};
 
 
-  // remove items from cart
-const handleRemoveItem = (indexToRemove) => {
-  const updatedCart = cart.filter((_, index) => index !== indexToRemove);
+
+
+const handleRemoveItem = (idToRemove) => {
+  const updatedCart = cart.filter(item => item.id !== idToRemove);
   setCart(updatedCart);
   localStorage.setItem("cart", JSON.stringify(updatedCart));
 };
@@ -116,7 +144,10 @@ const Handleremoveall = () => {
 }
 
 
-const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+const totalPrice = cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
+
+
 
 
   return (
@@ -124,6 +155,8 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
    
     <Navbar cartCount={cart.length} showSearch={showSearch} setShowSearch={setShowSearch} handleShowCart={handleShowCart}/>
        <Navbutton />
+
+
 
       <div className="homewrapper">
        <div className='first'>
@@ -160,7 +193,9 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
         </div>
       </div>
 
-
+       {message && (
+  <div className="cart-message">{message}</div>
+)}
 
       <div data-aos="fade-up">
         <div className="title">
@@ -264,17 +299,19 @@ const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   {cart.length === 0 ? (
   <p className='itmescart' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Your cart is empty.</p>
 ) : (
-  cart.map((item, index) => (
-    <div className="itmescart spanitems" key={index}>
-      <span>{item.id}</span>
-      <span>{item.name}</span>
-      <span>${item.price}</span>
-      <span>
-        <button onClick={() => handleRemoveItem(index)}>X</button>
-      </span>
-    </div>
-  ))
+cart.map((item) => (
+  <div key={item.id} className="itmescart spanitems">
+    <span>{item.id}</span>
+    <span>{item.name} ({item.quantity}x)</span>
+    <span>${(item.price * item.quantity).toFixed(2)}</span>
+    <span>
+      <button onClick={() => handleRemoveItem(item.id)}>Del</button>
+    </span>
+  </div>
+))
+
 )}
+
 
 
 

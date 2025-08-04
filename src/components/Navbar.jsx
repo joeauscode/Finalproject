@@ -37,7 +37,7 @@ const searchbar = () => {
           <span style={{fontSize: '20px'}}>Close</span>
           <span><IoClose style={{fontSize: '25px'}} /></span>
         </div>
-             <ul onClick={searchbar} >
+             <ul >
                <li>Home <IoIosArrowDown /></li>
                <li>Shops <IoIosArrowDown /></li>
                <li>Product <IoIosArrowDown /></li>
@@ -46,7 +46,7 @@ const searchbar = () => {
                <li>Blog <IoIosArrowDown /></li>
                <li>Contact Us</li>
              </ul> 
-        <div className='icons' onClick={() => {setShowSearch(false);}} >
+        <div className='icons' >
        <span><FaXTwitter /></span>
        <span><FaFacebookF /></span>
        <span><FaInstagram /></span>

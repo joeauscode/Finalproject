@@ -47,14 +47,14 @@ const ProductAll = ({addToCart}) => {
 const producWithID = useMemo(() =>
   produc.map((item) => ({
     ...item,
-    id: `${Math.floor(10000 + Math.random() * 90000)}`
+    id: item.name.toLowerCase().replace(/\s+/g, '-'), 
   }))
 , []);
 
 const productionWithID = useMemo(() =>
   productions.map((item) => ({
     ...item,
-    id: `${Math.floor(10000 + Math.random() * 90000)}`
+    id: item.name.toLowerCase().replace(/\s+/g, '-'), 
   }))
 , []);
 
