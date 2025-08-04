@@ -103,7 +103,8 @@ top: 3.5%;
   position: absolute;
   width: 34%;
   left: 30%;
-  top: 0.1%;
+  top: 20%;
+  z-index: 1000;
   align-items: center;
 
 }
@@ -245,7 +246,7 @@ background-color: #ffff;
 position: fixed;
 right: 0;
 width: 100%;
-z-index: 800;
+z-index: 600;
 top: 15%;
 
   ul{
