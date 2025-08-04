@@ -300,7 +300,7 @@ position: relative;
 @media screen and (max-width: 1000px) {
    .cart-message {
     right: 0%;
-    font-size: 12px;
+    font-size: 13px;
     background-color: transparent;
     /* border: 2px solid green; */
     width: 100%;
