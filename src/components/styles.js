@@ -278,27 +278,36 @@ position: relative;
 
 
   .cart-message {
-  background-color: #e6ffe6;
+  background-color: transparent;
   color: #2b7a2b;
   padding: 10px 16px;
   border-radius: 6px;
- 
-  width: fit-content;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
   font-weight: bold;
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
   z-index: 1000;
   position: absolute;
   z-index: 1000;
-  top: 20%;
-  right: 39%;
+  top: 19%;
+  right: 0%;
   position: fixed;
 }
+
 @media screen and (max-width: 1000px) {
    .cart-message {
-    right: 20%;
+    right: 0%;
     font-size: 12px;
-    top: 12%;
+    background-color: transparent;
+    /* border: 2px solid green; */
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
    }
 }
 
@@ -829,9 +838,13 @@ export const Allpro = styled.main`
   display: flex;
   justify-content: space-between;
   padding: 10px 18px;
+    gap: 8px;
 }
+
 .maincards{
   padding: 10px 10px;
+  /* padding: block; */
+  width: 100%;
   border: 0.4px solid lightgrey;
   border-radius: 5px;
   cursor: pointer;
@@ -1021,15 +1034,15 @@ export const Feature = styled.main`
 .cardsmain{
  display: grid;
  grid-template-columns: repeat(4, 1fr);
-  /* justify-content: space-between; */
   padding: 0rem 10px;
   justify-content: center;
-  gap: 15px;
+  gap: 7px;
 }
 .featuredcards{
   border: 0.1px solid lightgray;
   display: flex;
-   padding: 10px 14px;
+  width: 100%;
+   padding: 5px 5px;
    border-radius: 5px;
    gap: 8px;
    position: relative;
@@ -1071,7 +1084,7 @@ export const Feature = styled.main`
 
 @media screen and (max-width: 800px){
 .addtocatbutton{
-  top: 58% !important;
+  top: 65% !important;
   right: 11% !important;
 }
   .features{
@@ -1094,7 +1107,8 @@ export const Feature = styled.main`
 
   .myimgediv{
     width: 100%;
-    height: auto;
+    height: 100%;
+    border-radius: 8px;
   }
   .cardswrtup{
     justify-content: center;
