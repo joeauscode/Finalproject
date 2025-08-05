@@ -277,6 +277,12 @@ background-color: #f3f3f7;
 position: relative;
   font-family: 'Poppins', sans-serif;
 
+  .cart-message>div{
+    /* width: 30%; */
+    padding: 10px 10px;
+    background-color: lightgreen;
+    border-radius: 10px;
+  }
 
   .cart-message {
   background-color: transparent;
@@ -293,7 +299,7 @@ position: relative;
   z-index: 1000;
   position: absolute;
   z-index: 1000;
-  top: 19%;
+  top: 25%;
   right: 0%;
   position: fixed;
 }
@@ -308,7 +314,7 @@ position: relative;
     display: flex ;
     justify-content: center;
     align-items: center;
-    top: 8%;
+    top: 16%;
    }
 }
 

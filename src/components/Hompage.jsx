@@ -173,7 +173,7 @@ const HomepageComponent = () => {
       />
       <Navbutton />
 
-      {message && <div className="cart-message">{message}</div>}
+      {message && <div className="cart-message"><div>{message}</div></div>}
 
       <div className="homewrapper">
         <div className="first">
