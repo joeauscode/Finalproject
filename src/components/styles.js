@@ -54,7 +54,7 @@ position: fixed;
 right: 0;
 width: 100%;
 z-index: 800;
-top: 3.5%;
+top: 3%;
 
 
 .navwrapper{
@@ -255,7 +255,7 @@ position: fixed;
 right: 0;
 width: 100%;
 z-index: 600;
-top: 15%;
+top: 16%;
 
   ul{
     display: flex;

@@ -33,10 +33,16 @@ const HomepageComponent = () => {
   const [hoverCart, setHoverCart] = useState("");
 
   const hovercat = () => {
-    setHoverCart(true);
+   
+   
+        setHoverCart(true);
+    
+   
   };
   const leavecat = () => {
+     setTimeout(() => {
     setHoverCart(false);
+    }, 3000);
   };
 
   useEffect(() => {
