@@ -89,7 +89,7 @@ const searchbar = () => {
       <span><VscAccount style={{fontSize: '22px',}} /> Account</span>
       <span  onMouseOver={hovercat} onMouseLeave={leavecat} onClick={handleShowCart} style={{ cursor: 'pointer', fontSize: '17px', userSelect: 'none' }} ><PiShoppingBagOpenLight style={{ marginRight: '6px' }}  />Cart {cartCount}</span>
 
-      <span><img src={heart} alt="Heart" style={{width: '20px',}}/>  Wishlist 10</span>
+      <span><img src={heart} alt="Heart" style={{width: '20px',}}/>  Wishlist</span>
      </div>
      </div>
 
