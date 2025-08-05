@@ -31,6 +31,13 @@ const ProductAll = ({addToCart}) => {
     {name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
     {name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
   ];
+  const producs = [
+    {name: 'green ', price: 2154.00, oldPrice: 3200.00, img: potato},
+    {name: 'Tomatoes', price: 15.00, oldPrice: 230.00, img: egg},
+    {name: ' Cauliflower', price: 10,  img: Violet},
+    {name: 'Sorbet Mango', price: 254.00, oldPrice: 30340.00, img: cream},
+    {name: 'Shiso Green', price: 3260.00, oldPrice: 40230.00, img: Shiso},
+  ];
 
 
   const productions = [
@@ -39,6 +46,13 @@ const ProductAll = ({addToCart}) => {
     { name: 'Violet Cauliflower', price: 10,  img: Violet},
     { name: 'Sorbet Mango Ice Cream', price: 254.00, oldPrice: 300.00, img: cream},
     { name: 'Shiso Leaves Green', price: 360.00, oldPrice: 400.00, img: Shiso},
+  ];
+  const production = [
+    { name: 'Yellow ', price: 1000.00, oldPrice: 200.00, img: potato},
+    { name: 'Yellow Cherry ', price: 135.00, oldPrice: 220.00, img: egg},
+    { name: 'Cauliflower', price: 130,  img: Violet},
+    { name: 'Mango Ice Cream', price: 2254.00, oldPrice: 2300.00, img: cream},
+    { name: 'Shiso Leaves', price: 360.00, oldPrice: 400.00, img: Shiso},
   ];
 
 
@@ -51,8 +65,21 @@ const producWithID = useMemo(() =>
   }))
 , []);
 
+const producWitID = useMemo(() =>
+  producs.map((item) => ({
+    ...item,
+    id: `${Math.floor(10000 + Math.random() * 90000)}` 
+  }))
+, []);
+
 const productionWithID = useMemo(() =>
   productions.map((item) => ({
+    ...item,
+    id: `${Math.floor(10000 + Math.random() * 90000)}` 
+  }))
+, []);
+const productionhID = useMemo(() =>
+  production.map((item) => ({
     ...item,
     id: `${Math.floor(10000 + Math.random() * 90000)}` 
   }))
@@ -92,7 +119,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{item.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${item.price} <span className='strock'>{item.oldPrice}</span></span>
           </div>
       </div>
         ))}
@@ -103,7 +130,7 @@ const [changeTaps, setChangeTaps] = useState("all");
    {changeTap === 'meat' && (
           <div id="cardshere">
 
-        {producWithID.map((item) => (
+        {producWitID.map((item) => (
         <div className="maincards" data-aos="fade-up" key={item.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
@@ -113,7 +140,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{item.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${item.price} <span className='strock'>{item.oldPrice}</span></span>
           </div>
       </div>
         ))}
@@ -135,7 +162,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{item.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${item.price} <span className='strock'>{item.oldPrice}</span></span>
           </div>
       </div>
         ))}
@@ -147,7 +174,7 @@ const [changeTaps, setChangeTaps] = useState("all");
 
       <div id="cardshere">
 
-        {producWithID.map((item) => (
+        {producWitID.map((item) => (
         <div className="maincards" data-aos="fade-up" key={item.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
@@ -157,7 +184,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{item.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${item.price} <span className='strock'>{item.oldPrice}</span></span>
           </div>
       </div>
         ))}
@@ -198,7 +225,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{items.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${items.price}<span className='strock'>{items.oldPrice}</span></span>
           </div>
       </div>
   ))}
@@ -210,7 +237,7 @@ const [changeTaps, setChangeTaps] = useState("all");
 
   {changeTaps === 'fresh' && (
           <div id="cardshere">
-  {productionWithID.map((items) => (
+  {productionhID.map((items) => (
         <div className="maincards" data-aos="fade-up" key={items.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
@@ -220,7 +247,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{items.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}} >${items.price}<span className='strock'>{items.oldPrice}</span></span>
           </div>
       </div>
   ))}
@@ -241,7 +268,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{items.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${items.price}<span className='strock'>{items.oldPrice}</span></span>
           </div>
       </div>
   ))}
@@ -252,7 +279,7 @@ const [changeTaps, setChangeTaps] = useState("all");
   )}
     {changeTaps === 'Snack' && (
           <div id="cardshere">
-  {productionWithID.map((items) => (
+  {productionhID.map((items) => (
         <div className="maincards" data-aos="fade-up" key={items.id}>
          <div className='maoncardtwo'>
           <span className='new'>-15%</span>
@@ -262,7 +289,7 @@ const [changeTaps, setChangeTaps] = useState("all");
           <div className='buttom'>
            <span>{items.name}</span>
           <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
-          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          <span style={{display: 'flex', gap: '10px'}}>${items.price}<span className='strock'>{items.oldPrice}</span></span>
           </div>
       </div>
   ))}
