@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState} from 'react';
 import {Allpro} from './styles'
 import potato from '../assets/Allproduct/potato.png'
 import { IoIosStarOutline } from "react-icons/io";
@@ -60,6 +60,11 @@ const productionWithID = useMemo(() =>
 
 
 
+const [changeTap, setChangeTap] = useState("allproduct"); 
+const [changeTaps, setChangeTaps] = useState("all"); 
+
+
+
 
   return (
     <Allpro>
@@ -68,11 +73,77 @@ const productionWithID = useMemo(() =>
  
     <div className="allproduct">
       <div className='topone'>
-        <span>All Products</span>
-        <span>Fresh Meat</span>
-        <span>Fresh Bakery</span>
-        <span>Biscuits Snack</span>
+        <span onClick={() => setChangeTap('allproduct')}>All Products</span>
+        <span onClick={() => setChangeTap('meat')}>Fresh Meat</span>
+        <span onClick={() => setChangeTap('Bakery')}>Fresh Bakery</span>
+        <span onClick={() => setChangeTap('Biscuits')}>Biscuits Snack</span>
       </div>
+      
+      {changeTap === 'allproduct' && (
+              <div id="cardshere">
+
+        {producWithID.map((item) => (
+        <div className="maincards" data-aos="fade-up" key={item.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={item.img} alt={item.name} /></div>
+          <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(item)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
+         </div>
+          <div className='buttom'>
+           <span>{item.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          </div>
+      </div>
+        ))}
+
+      </div>
+      )}
+
+   {changeTap === 'meat' && (
+          <div id="cardshere">
+
+        {producWithID.map((item) => (
+        <div className="maincards" data-aos="fade-up" key={item.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={item.img} alt={item.name} /></div>
+          <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(item)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
+         </div>
+          <div className='buttom'>
+           <span>{item.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          </div>
+      </div>
+        ))}
+
+      </div>
+   )}
+
+   
+    {changeTap === 'Bakery' && (
+            <div id="cardshere">
+
+        {producWithID.map((item) => (
+        <div className="maincards" data-aos="fade-up" key={item.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={item.img} alt={item.name} /></div>
+          <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(item)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover' /></div>
+         </div>
+          <div className='buttom'>
+           <span>{item.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>${item.price} <span className='strock'>{item.oldPrice}</span></span>
+          </div>
+      </div>
+        ))}
+
+      </div>
+    )}
+
+    {changeTap === 'Biscuits' && (
 
       <div id="cardshere">
 
@@ -92,6 +163,8 @@ const productionWithID = useMemo(() =>
         ))}
 
       </div>
+    )}
+
 
 
     </div>
@@ -105,15 +178,15 @@ const productionWithID = useMemo(() =>
           <span>TOP TRENDING PRODUCT</span>
         </div>
          <div className='toponetwo'>
-            <span>All Products</span>
-        <span>Fresh Meat</span>
-        <span>Fresh Bakery</span>
-        <span>Biscuits Snack</span>
+        <span onClick = {() => setChangeTaps('all')}>All Products</span>
+        <span onClick = {() => setChangeTaps('fresh')}>Fresh Meat</span>
+        <span onClick = {() => setChangeTaps('Bakeryfresh')}>Fresh Bakery</span>
+        <span onClick = {() => setChangeTaps('Snack')}>Biscuits Snack</span>
          </div>
       </div>
 
 
-
+  {changeTaps === 'all' && (
       <div id="cardshere">
   {productionWithID.map((items) => (
         <div className="maincards" data-aos="fade-up" key={items.id}>
@@ -133,8 +206,71 @@ const productionWithID = useMemo(() =>
       
 
       </div>
+  )}
 
+  {changeTaps === 'fresh' && (
+          <div id="cardshere">
+  {productionWithID.map((items) => (
+        <div className="maincards" data-aos="fade-up" key={items.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={items.img} alt={items.name} /></div>
+           <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(items)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover'/></div>
+         </div>
+          <div className='buttom'>
+           <span>{items.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          </div>
+      </div>
+  ))}
 
+      
+
+      </div>
+  )}
+    {changeTaps === 'Bakeryfresh' && (
+          <div id="cardshere">
+  {productionWithID.map((items) => (
+        <div className="maincards" data-aos="fade-up" key={items.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={items.img} alt={items.name} /></div>
+           <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(items)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover'/></div>
+         </div>
+          <div className='buttom'>
+           <span>{items.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          </div>
+      </div>
+  ))}
+
+      
+
+      </div>
+  )}
+    {changeTaps === 'Snack' && (
+          <div id="cardshere">
+  {productionWithID.map((items) => (
+        <div className="maincards" data-aos="fade-up" key={items.id}>
+         <div className='maoncardtwo'>
+          <span className='new'>-15%</span>
+          <div className='imagediv'><img src={items.img} alt={items.name} /></div>
+           <div className='addtocatbutton' style={{position: 'absolute', top: '59%', right: '10%', color: '#28a745', fontSize: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap:'2px'}} onClick={() => addToCart(items)}><span style={{fontSize: '9px'}}>add to cart</span><FaShoppingCart className='onlcikhover'/></div>
+         </div>
+          <div className='buttom'>
+           <span>{items.name}</span>
+          <span><IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /> <IoIosStarOutline /></span>
+          <span>{items.price}<span className='strock'>{items.oldPrice}</span></span>
+          </div>
+      </div>
+  ))}
+
+      
+
+      </div>
+  )}
     </div>
 
 

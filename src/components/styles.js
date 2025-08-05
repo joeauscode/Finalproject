@@ -860,7 +860,7 @@ export const Allpro = styled.main`
   width: 75%;
   background-color: #ffff;
   margin: 20px auto;
- 
+
 }
 
 .topone{
@@ -875,6 +875,7 @@ export const Allpro = styled.main`
  color: #5f8a46;
  font-size: 14px;
  font-weight: 600;
+ cursor: pointer;
 
 }
 
@@ -883,6 +884,7 @@ export const Allpro = styled.main`
   justify-content: space-between;
   padding: 10px 18px;
     gap: 8px;
+
 }
 
 .maincards{
@@ -973,6 +975,7 @@ color: #e0654cff;
  color: #5f8a46;
  font-size: 12px;
  font-weight: 600;
+ cursor: pointer;
 }
 
 .banner{
