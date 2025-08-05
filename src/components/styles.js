@@ -152,17 +152,18 @@ top: 3.5%;
 
   font-size: 15px;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     font-family: 'Poppins', sans-serif;
 #iconshere{
   display: none;
 }
 
+
 .middle{
   display: none;
 }
 
-.searbarhere{
+.rightnav >.searbarhere{
   display: none;
 }
 
@@ -456,6 +457,7 @@ cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
+
 
   .mouseovercart{
     display: none;
