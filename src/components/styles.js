@@ -736,7 +736,7 @@ align-items: center;
 width: 100%;
  padding: 5px 8px ;
 
-  
+border-radius: 10px;  
 }
 
 .image{

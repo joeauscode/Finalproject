@@ -18,7 +18,6 @@ import { FaMinus } from "react-icons/fa6";
 import { FaShoppingCart, FaPlus, FaEquals } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Navbutton from "./Navbutton";
-// import { RiDeleteBin5Line } from "react-icons/ri";
 import ProductAll from "./ProductAll";
 import Featurebran from "./Featurebran";
 import Reviews from "./Reviews";
