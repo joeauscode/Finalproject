@@ -336,11 +336,17 @@ position: relative;
   /* position: absolute; */
   z-index: 800;
   top: 15%;
-  right: 10%;
+  right: 13%;
   background-color: white;
   /* padding: 10px 10px; */
   position: fixed;
   box-shadow: 2px 2px 4px;
+}
+
+.mouseovercart>span:nth-child(1){
+   padding: 20px 10px;
+   text-align: center;
+  width: 10px;
 }
 
    .onlcikhover:hover{

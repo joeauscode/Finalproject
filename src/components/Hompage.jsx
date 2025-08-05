@@ -33,9 +33,7 @@ const HomepageComponent = () => {
 
   const hovercat = () => {
    
-   
         setHoverCart(true);
-    
    
   };
   const leavecat = () => {
@@ -196,7 +194,7 @@ const handleRemoveItem = (idToRemove) => {
         {/* hover on cart */}
         {hoverCart &&
           (cart.length === 0 ? (
-            <span>Your Cart is Empty</span>
+            <span >Your Cart is Empty</span>
           ) : (
             <>
               {cart.map((item) => (
