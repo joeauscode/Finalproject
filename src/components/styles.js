@@ -445,7 +445,7 @@ cursor: pointer;
 
 .addremov{
   display: flex;
-  justify-content: space-between;
+  gap: 25px;
 }
 
 @media screen and (max-width: 1000px) {

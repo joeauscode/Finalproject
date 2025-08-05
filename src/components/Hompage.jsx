@@ -203,7 +203,7 @@ const handleRemoveItem = (idToRemove) => {
                   <td>
                     <span style={{display: 'flex', justifyContent: 'space-between', gap: '7px'}} >
                       <FaMinus onClick={() => handleRemoveItem(item.id)} />
-                        <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer' }} />
+                        <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer', color: 'green' }} />
 
                     </span>
                   
@@ -399,7 +399,7 @@ const handleRemoveItem = (idToRemove) => {
                   <th>ITEMS</th>
                   <th>PRICE</th>
                   <th style={{ cursor: "pointer" }} onClick={Handleremoveall}>
-                    REMOVE
+                    AD / RM
                   </th>
                 </tr>
               </thead>
@@ -413,9 +413,10 @@ const handleRemoveItem = (idToRemove) => {
                     <td>${item.price.toFixed(2) * item.quantity}</td>
                     <td>
                     <span className="addremov" >
-                      <FaMinus onClick={() => handleRemoveItem(item.id)} />
-                        <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer' }} />
+                      <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer', color: 'green' }} />
 
+                      <FaMinus onClick={() => handleRemoveItem(item.id)} />
+                        
                     </span>
                     </td>
                   </tr>
