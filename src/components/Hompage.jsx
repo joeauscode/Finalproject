@@ -304,7 +304,7 @@ const HomepageComponent = () => {
             </div>
             <p className="dis">Short Description</p>
           </div>
-          <div className="imagetwo">
+          <div className="image">
             <img src={paper} alt="paper" />
             {/* <div style={{position: 'absolute', top: '80%', left: '3%', color: '#28a745', fontSize: '20px'}}><FaShoppingCart /></div> */}
           </div>
@@ -319,7 +319,7 @@ const HomepageComponent = () => {
             </div>
             <p className="dis">Short Description</p>
           </div>
-          <div className="imagetwo">
+          <div className="image">
             <img src={meat} alt="paper" />
             {/* <div style={{position: 'absolute', top: '80%', left: '3%', color: '#28a745', fontSize: '20px'}}><FaShoppingCart /></div> */}
           </div>

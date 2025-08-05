@@ -698,57 +698,32 @@ text-transform: capitalize;
   margin: auto;
   padding: 17px 17px;
   margin-top: 17px;
-  gap: 1rem;
+  gap: 5px;
+
 }
 
 .topoffer{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  background-color: #f4f6fa;
-    border-radius: 10px;
+display: flex;
+border: 1px solid lightgray;
+align-items: center;
 width: 100%;
-cursor: pointer;
+ padding: 5px 8px ;
+
   
 }
 
 .image{
-  width: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 170px;
-  
-
+  width: 100%;
 }
 
 .image>img{
   width: 100%;
-  /* rotate: calc(-20deg); */
-
-
-
-}
-
-.imagetwo{
-   width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   height: 170px;
-  
-}
-
-.imagetwo>img{
-  width: 100%;
-   /* height: 200px; */
 }
 
 .topofe{
-    padding: 0px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  width: 100%;
 
 }
 .spanclas{
@@ -839,7 +814,7 @@ img{
 .topoffer{
   display: flex;
   gap: 20px;
-  padding: 5px 0px;
+  padding: 5px 10px;
   justify-content: space-between;
 }
 
@@ -1244,6 +1219,7 @@ font-size: 14px;
     justify-content: space-between;
     align-items: center;
     padding: 11px 15px;
+    gap: 5px;
   }
 
   .reviwimg{
@@ -1264,6 +1240,7 @@ font-size: 14px;
     border: 0.3px solid lightgray;
     padding: 10px 10px;
     border-radius: 5px;
+    width: 100%;
   }
 
   .middlescard{
@@ -1301,13 +1278,19 @@ font-size: 14px;
   }
   .mainhercardss{
     display: flex;
-    padding: 11px 14px;
-    gap: 1rem;
+    /* padding: 11px 14px; */
+    /* gap: 1rem; */
+    gap: 5px;
+    width: 100%;
   }
 
   #cardshere{
-   border: none;
+   border: 1px solid lightgray;
+   border-radius: 5px;
+   padding: 5px;
    font-size: 13px;
+   width: 100%;
+   text-align: center;
   }
 
   .titleheaing{
@@ -1364,7 +1347,7 @@ font-size: 14px;
   }
 
   .mainhercardss{
-        width: 100%;
+        width: 95%;
         margin: auto;
         border-radius: 5px;
     display: flex;
