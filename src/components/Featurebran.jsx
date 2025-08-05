@@ -34,11 +34,11 @@ const products = [
 ];
 
 
-
+  const generateId = () => Math.floor(10000 + Math.random() * 90000);
 const Productuuid = useMemo(() => 
   products.map((item) => ({
     ...item,
-    id: item.name.toLowerCase().replace(/\s+/g, '-'), 
+    id: generateId() 
   })),
 [])
   

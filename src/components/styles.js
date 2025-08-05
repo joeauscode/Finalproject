@@ -327,6 +327,7 @@ position: relative;
 .overblur{
    z-index: 999;
   position: absolute;
+  position: fixed;
   width: 100%;
   height: calc(100% + 500px);
   top: 0%;
@@ -335,18 +336,86 @@ position: relative;
 
 }
 .cartsitems {
-    position: absolute;
      z-index: 1000;
-       top: 3%;
-
-           width: 100%;
+       top: 20%;
+       height: 80vh;
+        position: fixed;
+      width: 100%;
+      overflow-y: auto;
 }
+.cartempty{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 10px 10px;
+}
+.cartempty>span{
+  font-size: 150px;
+}
+.cartempty>p{
+  font-size: 20px;
+  color: red;
+  margin-top: -3rem;
+  font-weight: 700;
+}
+.itmescart{
+  width: 60%;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+   border-right: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   border-bottom: 1px solid lightgray;
+}
+table {
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+
+    font-family: 'Segoe UI', sans-serif;
+    background-color: white;
+  }
+
+  thead {
+    background-color: #f8f8f8;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+  }
+
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  td:last-child {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
 .itmescartclose{
     box-shadow: 4px 4px 8px;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   color: white;
   font-weight: 600;
   font-size: 12px;
@@ -357,67 +426,31 @@ position: relative;
 padding: 10px 0rem;
 cursor: pointer;
 }
-.itmescart{
-  box-shadow: 4px 4px 8px;
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: auto;
-  background-color: white;
-  border-bottom: 1px solid lightgray;
-padding: 1rem 2rem;
-font-size: 14px;
 
-}
 
-.spnproce{
-  margin-right: -80px;
-}
+@media screen and (max-width: 1000px) {
+  table {
+    width: 95%;
+  }
 
-@media screen and (max-width: 1000px){
   .itmescart{
     width: 95%;
-        bottom: 0;
-
- 
-  }
-.spnproce{
-  margin-right: 0px;
-}
-  .spanitems >span:nth-child(1){
-    border-right: 1px solid green;
-     margin-left: -20px; 
-     width: 50px;
   }
 
-  .spanitems >span:nth-child(2){
-    border-right: 1px solid green;
-     margin-left: -20px; 
-     width: 150px;
-     text-align: center;
-  }
-  .spanitems >span:nth-child(4){
-     margin-right: -20px; 
-  }
-.latchekc{
-  margin-right: -20px;
-}
   .itmescartclose{
     width: 95%;
-    /* margin-bottom: 1px; */
-    /* margin-top: 10rem; */
+  }
 
+  .cartempty{
+    width: 95%;
   }
 
   .cartsitems{
-  /* bottom: 0rem; */
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-
-  
+    top: 7%;
   }
 }
+
+
 
 .homewrapper{
   display: flex;
@@ -1521,4 +1554,16 @@ a{
 
    }
 }
+`
+
+
+
+
+
+
+
+
+export const Check = styled.main`
+
+
 `
