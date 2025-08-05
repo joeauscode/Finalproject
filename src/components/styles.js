@@ -324,6 +324,16 @@ position: relative;
 }
 
 
+.mouseovercart{
+  /* position: absolute; */
+  z-index: 800;
+  top: 15%;
+  right: 10%;
+  background-color: white;
+  /* padding: 10px 10px; */
+  position: fixed;
+  box-shadow: 2px 2px 4px;
+}
 
    .onlcikhover:hover{
  color: red;
@@ -433,8 +443,16 @@ padding: 10px 0rem;
 cursor: pointer;
 }
 
+.addremov{
+  display: flex;
+  justify-content: space-between;
+}
 
 @media screen and (max-width: 1000px) {
+
+  .mouseovercart{
+    display: none;
+  }
   table {
     width: 95%;
   }

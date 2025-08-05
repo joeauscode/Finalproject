@@ -13,7 +13,7 @@ import { IoClose } from "react-icons/io5";
 
 
 
-const Navbar = ({cartCount, showSearch, setShowSearch, handleShowCart}) => {
+const Navbar = ({cartCount, showSearch, setShowSearch, handleShowCart, hovercat, leavecat}) => {
 
 const [menuBar, setMenuBar] = useState(false);
 // const [showSearch, setShowSearch] = useState(false); // note the S
@@ -87,7 +87,7 @@ const searchbar = () => {
      <div className='rightnav'>
       <span className='searbarhere' onClick={searchbar}><BiSearchAlt style={{fontSize: '23px',}} />Search</span>
       <span><VscAccount style={{fontSize: '22px',}} /> Account</span>
-      <span onClick={handleShowCart} style={{ cursor: 'pointer', fontSize: '17px', userSelect: 'none' }} ><PiShoppingBagOpenLight style={{ marginRight: '6px' }}  />Cart {cartCount}</span>
+      <span  onMouseOver={hovercat} onMouseLeave={leavecat} onClick={handleShowCart} style={{ cursor: 'pointer', fontSize: '17px', userSelect: 'none' }} ><PiShoppingBagOpenLight style={{ marginRight: '6px' }}  />Cart {cartCount}</span>
 
       <span><img src={heart} alt="Heart" style={{width: '20px',}}/>  Wishlist 10</span>
      </div>

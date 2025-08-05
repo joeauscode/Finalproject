@@ -6,7 +6,7 @@ import { BiSupport } from "react-icons/bi";
 import { TfiReload } from "react-icons/tfi";
 import { IoMdGift } from "react-icons/io";
 import { TbPigMoney } from "react-icons/tb";
-import { MdOutlineStarBorderPurple500 } from "react-icons/md";
+import { MdOutlineStarBorderPurple500, MdOutlineShoppingCartCheckout } from "react-icons/md";
 import apple from "../assets/titlecard/apple.png";
 import froud from "../assets/titlecard/fruit.png";
 import banana from "../assets/titlecard/banana.png";
@@ -14,14 +14,11 @@ import flowers from "../assets/titlecard/flower.png";
 import fish from "../assets/topoffer/fish.png";
 import paper from "../assets/topoffer/pepper.png";
 import meat from "../assets/topoffer/meat.png";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa6";
+import { FaShoppingCart, FaPlus, FaEquals } from "react-icons/fa";
 import Navbar from "./Navbar";
 import Navbutton from "./Navbutton";
-import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { FaEquals } from "react-icons/fa";
-
+// import { RiDeleteBin5Line } from "react-icons/ri";
 import ProductAll from "./ProductAll";
 import Featurebran from "./Featurebran";
 import Reviews from "./Reviews";
@@ -33,6 +30,15 @@ import aloe from "../assets/titlecard/aloe.png";
 import dayjs from "dayjs";
 
 const HomepageComponent = () => {
+  const [hoverCart, setHoverCart] = useState("");
+
+  const hovercat = () => {
+    setHoverCart(true);
+  };
+  const leavecat = () => {
+    setHoverCart(false);
+  };
+
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
@@ -93,11 +99,6 @@ const HomepageComponent = () => {
     []
   );
 
-  //   const [cart, setCarts] = useState(() => {
-  //   const saved = localStorage.getItem("cart");
-  //   return saved ? JSON.parse(saved) : [];
-  // });
-
   // featres brand
   // ================================================================
   const [showSearch, setShowSearch] = useState(false);
@@ -147,11 +148,21 @@ const HomepageComponent = () => {
     setShowCart(true);
   };
 
-  const handleRemoveItem = (idToRemove) => {
-    const updatedCart = cart.filter((item) => item.id !== idToRemove);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
+// remove items  from cart
+const handleRemoveItem = (idToRemove) => {
+  const updatedCart = cart
+    .map((item) => {
+      if (item.id === idToRemove) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    })
+    .filter((item) => item.quantity > 0); // remove item only if quantity is 0
+
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+};
+
 
   const Handleremoveall = () => {
     setCart([]);
@@ -170,10 +181,46 @@ const HomepageComponent = () => {
         showSearch={showSearch}
         setShowSearch={setShowSearch}
         handleShowCart={handleShowCart}
+        hovercat={hovercat}
+        leavecat={leavecat}
       />
       <Navbutton />
 
-      {message && <div className="cart-message"><div>{message}</div></div>}
+      <div className="mouseovercart" >
+        {" "}
+        {/* hover on cart */}
+        {hoverCart &&
+          (cart.length === 0 ? (
+            <span>Your Cart is Empty</span>
+          ) : (
+            <>
+              {cart.map((item) => (
+                <tr key={item.id}>
+                    <td>
+                    {item.name} X{item.quantity}
+                  </td>
+                  <td>${item.price.toFixed(2) * item.quantity}</td>
+                  <td>
+                    <span style={{display: 'flex', justifyContent: 'space-between', gap: '7px'}} >
+                      <FaMinus onClick={() => handleRemoveItem(item.id)} />
+                        <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer' }} />
+
+                    </span>
+                  
+                  </td>
+                </tr>
+                
+              ))}
+                <span style={{display: 'flex', justifyContent: 'end', padding: '5px 5px', cursor: 'pointer'}}>Checkout</span>
+            </>
+          ))}
+      </div>
+
+      {message && (
+        <div className="cart-message">
+          <div>{message}</div>
+        </div>
+      )}
 
       <div className="homewrapper">
         <div className="first">
@@ -352,7 +399,7 @@ const HomepageComponent = () => {
                   <th>ITEMS</th>
                   <th>PRICE</th>
                   <th style={{ cursor: "pointer" }} onClick={Handleremoveall}>
-                    <RiDeleteBin5Line />
+                    REMOVE
                   </th>
                 </tr>
               </thead>
@@ -360,10 +407,16 @@ const HomepageComponent = () => {
                 {cart.map((item) => (
                   <tr key={item.id}>
                     <td>{item.id}</td>
-                    <td>{item.name} X{item.quantity}</td>
+                    <td>
+                      {item.name} X{item.quantity}
+                    </td>
                     <td>${item.price.toFixed(2) * item.quantity}</td>
                     <td>
-                      <span onClick={() => handleRemoveItem(item.id)}><IoMdClose /></span>
+                    <span className="addremov" >
+                      <FaMinus onClick={() => handleRemoveItem(item.id)} />
+                        <FaPlus onClick={() => addToCart(item)} style={{ cursor: 'pointer' }} />
+
+                    </span>
                     </td>
                   </tr>
                 ))}
@@ -371,9 +424,15 @@ const HomepageComponent = () => {
             </table>
           )}
           <div className="itmescart">
-            <span><strong>Total</strong></span>
-            <span><FaEquals /></span>
-            <span><strong>${totalPrice.toFixed(2)}</strong></span>
+            <span>
+              <strong>Total</strong>
+            </span>
+            <span>
+              <FaEquals />
+            </span>
+            <span>
+              <strong>${totalPrice.toFixed(2)}</strong>
+            </span>
             <span>
               <button>Checkout</button>
             </span>
