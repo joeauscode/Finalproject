@@ -29,6 +29,13 @@ z-index: 900;
     font-size: 13px;
   }
 
+  .showmovile:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    
+  }
+
 @media screen and (max-width: 900px) {
   .here{
     display:none;
