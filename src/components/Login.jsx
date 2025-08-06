@@ -18,9 +18,7 @@ const Login = () => {
     navigate("/");
   };
 
-  const redirect = () =>{
-    window.location.reload()
-  }
+
 
   return (
     <LogReg>
@@ -86,7 +84,7 @@ const Login = () => {
         {/* loginform */}
     
     {Tab && (
-          <div className="overlayblur">
+          <div onClick={() => setTab(false)} className="overlayblur">
         </div>
     )}
     {Tab && (
@@ -94,7 +92,7 @@ const Login = () => {
                 <form action="">
           <div className="signinwrite">
             <p>Sign in</p>
-            <span onClick={redirect}>Register</span>
+            <span onClick={() => setTab(false)}>Register</span>
           </div>
 
           <div>
