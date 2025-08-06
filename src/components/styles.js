@@ -405,9 +405,17 @@ outline: none;
 }
 
 @media screen and (max-width: 1000px) {
+
+  .navlogin{
+    width: 100%;
+  }
   form{
     width: 95%;
   }
+  .writeup{
+  width: 95%;
+}
+
 }
 
 
