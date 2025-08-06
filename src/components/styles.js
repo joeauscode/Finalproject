@@ -249,6 +249,168 @@ top: 3%;
 
 
 
+export const LogReg = styled.main`
+
+
+  font-family: "Merriweather", serif;
+  border: 1px solid white;
+
+.topnav{
+  border-bottom: 1px solid lightgray;
+    padding: 10px 10px;
+    margin-top: 1.9rem ;
+}
+.navlogin{
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:auto;
+
+}
+
+.left{
+  cursor: pointer;
+}
+
+.right{
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 4px 12px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.writeup{
+  width: 45%;
+  margin: auto;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block: 20px;
+  text-transform: capitalize;
+}
+.writeup>p{
+ color: green;
+ font-weight: 700;
+ font-size: 20px;
+}
+form{
+  width: 45%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.firstnaelastname{
+  display: flex;
+  gap: 7px;
+  justify-content: space-between;
+
+}
+.firstnaelastname>div{
+ width: 100%;
+}
+.firstnaelastname>div>label{
+ display: block;
+}
+.firstnaelastname>div>input{
+ width: 100%;
+padding: 14px 10px;
+border: 2px solid lightgray;
+border-radius: 8px;
+margin-bottom: 14px;
+font-size: 16px;
+}
+.firstnaelastname>div>label{
+font-size: 13px;
+}
+.passwordoneandtow{
+    display: flex;
+  gap: 7px;
+  justify-content: space-between;
+}
+.passwordoneandtow>div{
+ width: 100%;
+}
+.passwordoneandtow>div>input{
+ width: 100%;
+padding: 14px 10px;
+border: 2px solid lightgray;
+border-radius: 8px;
+margin-bottom: 14px;
+font-size: 16px;
+}
+
+.passwordoneandtow>div>label{
+font-size: 13px;
+}
+
+form>div>label{
+display: block;
+margin-bottom: 3px;
+font-size: 13px;
+ 
+}
+form>div>input{
+width: 100%;
+padding: 14px 10px;
+border: 2px solid lightgray;
+border-radius: 8px;
+margin-bottom: 14px;
+font-size: 16px;
+
+}
+
+.passwordoneandtow>div>input:hover{
+border: 1px solid green;
+outline: none;
+}
+form>div>input:hover{
+border: 1px solid green;
+outline: none;
+ 
+}
+
+.firstnaelastname>div>input:hover{
+  border: 1px solid green;
+outline: none;
+}
+
+.btn{
+  padding: 14px 10px;
+  width: 100%;
+  background-color: green;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid green;
+  margin-block: 10px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.terms{
+  font-size: 12px;
+}
+.termss{
+  font-size: 12px;
+  margin-bottom: 2rem;
+}
+`
+
+
+
+
+
+
+
 export const Navbutton = styled.nav`
 background-color: #ffff;
 position: fixed;

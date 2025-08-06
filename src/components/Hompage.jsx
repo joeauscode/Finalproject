@@ -23,6 +23,7 @@ import Featurebran from "./Featurebran";
 import Reviews from "./Reviews";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 import aloe from "../assets/titlecard/aloe.png";
 // datetime
@@ -177,6 +178,12 @@ const handleRemoveItem = (idToRemove) => {
     0
   );
 
+  const navigate = useNavigate();
+
+  const Gotologin = () => {
+   navigate('/login')
+  }
+
   return (
     <Homepage>
       <Navbar
@@ -186,6 +193,7 @@ const handleRemoveItem = (idToRemove) => {
         handleShowCart={handleShowCart}
         hovercat={hovercat}
         leavecat={leavecat}
+        Gotologin={Gotologin}
       />
       <Navbutton />
 
