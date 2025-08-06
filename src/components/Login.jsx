@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Navigation from "./Navbutton";
 import logo from "../assets/icons/logo.png";
 import { LogReg } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
 
+  const [Tab, setTab] = useState(false)
+
+  const Showloin = () => {
+    setTab(prev => !prev)
+  }
+
   const GotoHome = () => {
     navigate("/");
   };
+
+  const redirect = () =>{
+    window.location.reload()
+  }
+
   return (
     <LogReg>
       <div className="topnav">
@@ -19,7 +30,7 @@ const Login = () => {
             <img src={logo} alt="" />
           </div>
           <div className="right">
-            <span>Login</span>
+            <span onClick={Showloin}>Login</span>
           </div>
         </div>
       </div>
@@ -29,6 +40,8 @@ const Login = () => {
           <p>Create your account</p>
           <span>Registration is easy.</span>
         </div>
+
+        {/* signup page */}
         <form action="">
           <div>
             <label htmlFor="Email">Email address *</label>
@@ -69,6 +82,39 @@ const Login = () => {
             permission.
           </p>
         </form>
+
+        {/* loginform */}
+    
+    {Tab && (
+          <div className="overlayblur">
+        </div>
+    )}
+    {Tab && (
+<div className="sgnin">
+                <form action="">
+          <div className="signinwrite">
+            <p>Sign in</p>
+            <span onClick={redirect}>Register</span>
+          </div>
+
+          <div>
+            <label htmlFor="">Email address</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div>
+            <label htmlFor="">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <Link>Forgot your password?</Link>
+          <div >
+            <button className="btn">Sign in</button>
+          </div>
+        </form>
+       </div>
+    )}
+       
+
+       
       </div>
     </LogReg>
   );

@@ -250,7 +250,7 @@ top: 3%;
 
 
 export const LogReg = styled.main`
-
+position: relative;
 
   font-family: "Merriweather", serif;
   border: 1px solid white;
@@ -403,6 +403,66 @@ outline: none;
   font-size: 12px;
   margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 1000px) {
+  form{
+    width: 95%;
+  }
+}
+
+
+
+
+/* signin */
+.sgnin{
+  position: absolute;
+  top: 20%;
+  left: 35.4%;
+ box-shadow: 4px 4px 8px;
+  width: 28%;
+  z-index: 900;
+  background-color: whitesmoke;
+  padding: 30px 10px;
+  border-radius: 20px;
+}
+
+.sgnin>form{
+  border: 2px soliid;
+  width: 80%;
+}
+.signinwrite{
+  display: flex;
+  justify-content: space-between;
+  margin-block: 20px;
+  color: green;
+}
+.signinwrite>span{
+  border: 1px solid lightgray;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: green;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 1000px) {
+  .sgnin{
+    width: 95%;
+    left: 2.3%;
+  }
+}
+
+.overlayblur {
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 255, 0.4); */
+  backdrop-filter: blur(2px); /* adds blur to background */
+  z-index: 800;
+  position: fixed; /* fixed is better for overlays */
+  top: 0;
+  left: 0;
+}
+
 `
 
 
